@@ -1,68 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <title>404 error page</title>
+    <script type="text/javascript">
+      window.isErrorPage = true;
+      window.errorCode = '404';
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="404 error page" />
+    <script
+      src="/scripts/scripts.js"
+      type="module"
+      crossorigin="use-credentials"
+    ></script>
 
-<head>
-  <title>Page not found</title>
-  <script type="text/javascript">
-    window.isErrorPage = true;
-    window.errorCode = '404';
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Page not found">
-  <script src="/scripts/scripts.js" type="module"></script>
-  <script type="module">
-    window.addEventListener('load', () => {
-      if (document.referrer) {
-        const { origin, pathname } = new URL(document.referrer);
-        if (origin === window.location.origin) {
-          const backBtn = document.createElement('a');
-          backBtn.classList.add('button', 'error-button-back');
-          backBtn.href = pathname;
-          backBtn.textContent = 'Go back';
-          backBtn.title = 'Go back';
-          const btnContainer = document.querySelector('.button-container');
-          btnContainer.append(backBtn);
+    <script type="module">
+      import { sampleRUM } from '/scripts/aem.js';
+      import { getPathDetails } from '/scripts/scripts.js';
+      import { loadFragment } from '/blocks/fragment/fragment.js';
+      const defaultLangRegion = 'en-au';
+      const { langRegion = defaultLangRegion } = getPathDetails() || {};
+      const errorPagePath = `/${langRegion}/error-pages/404.plain.html`;
+      const defaultErrorHTML = `
+            <div class="default-content-wrapper">
+                <h1>Looks like a 404 error</h1>
+                <p>We're having trouble finding what you're looking for. Try checking the web address and refresh the page. If that doesn't work, head back to the&nbsp;<a href="/${defaultLangRegion}">homepage</a>.</p>
+            </div>
+          `;
+      const fetchAndParseHTML = async (tagName) => {
+        const container = document.querySelector('main .section');
+        try {
+          let fragment = await loadFragment(errorPagePath);
+          if (fragment == null && defaultLangRegion !== langRegion) {
+            fragment = await loadFragment(
+              `/${defaultLangRegion}/error-pages/404.plain.html`,
+            );
+          }
+          if (fragment) {
+            const fragmentSection = fragment.querySelector(':scope .section');
+            if (fragmentSection) {
+              container.classList.add(...fragmentSection.classList);
+              container.replaceWith(...fragment.childNodes);
+            }
+          } else {
+            container.insertAdjacentHTML('afterbegin', defaultErrorHTML);
+          }
+        } catch (error) {
+          // Default Error Message in case of any error
+          container.insertAdjacentHTML('afterbegin', defaultErrorHTML);
         }
+      };
+
+      // Ensure fetchAndParseHTML is always called, even if the script loads after the window 'load' event.
+      // If the document is already fully loaded, call directly. Otherwise, attach to the window 'load' event.
+      if (document.readyState === 'complete') {
+        // Script loaded after window 'load' event; call directly
+        sampleRUM('404', { source: document.referrer });
+        fetchAndParseHTML('main');
+      } else {
+        // Script loaded before window 'load' event; attach event listener
+        window.addEventListener('load', () => {
+          sampleRUM('404', { source: document.referrer });
+          fetchAndParseHTML('main');
+        });
       }
-    });
-  </script>
-  <script type="module">
-    import { sampleRUM } from '/scripts/aem.js';
-    sampleRUM('404', { source: document.referrer });
-  </script>
-  <link rel="stylesheet" href="/styles/styles.css">
-  <style>
-    main.error {
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      align-items: center;
-    }
+    </script>
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
 
-    main.error .error-number {
-      width: 100%;
-    }
-
-    main.error .error-number text {
-      font-family: monospace;
-    }
-  </style>
-  <link rel="stylesheet" href="/styles/lazy-styles.css">
-</head>
-
-<body>
-  <header></header>
-  <main class="error">
-    <div class="section">
-      <svg viewBox="1 0 38 18" class="error-number">
-        <text x="0" y="17">404</text>
-      </svg>
-      <h2 class="error-message">Page Not Found</h2>
-      <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Go home</a>
-      </p>
-    </div>
-  </main>
-  <footer></footer>
-</body>
-
+  <body>
+    <header></header>
+    <main class="error">
+      <div class="section text-center"></div>
+    </main>
+    <footer></footer>
+  </body>
 </html>

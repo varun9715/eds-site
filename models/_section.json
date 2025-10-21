@@ -20,6 +20,11 @@
       "id": "section",
       "fields": [
         {
+          "component": "tab",
+          "label": "General",
+          "name": "generalTab"
+        },
+        {
           "component": "text",
           "name": "name",
           "label": "Section Name",
@@ -28,13 +33,46 @@
         {
           "component": "multiselect",
           "name": "style",
-          "label": "Style",
+          "label": "Styles",
           "options": [
             {
-              "name": "Highlight",
-              "value": "highlight"
+              "name": "Text Align",
+              "children": [
+                {
+                  "name": "Center",
+                  "value": "text-center"
+                }
+              ]
             }
           ]
+        },
+        {
+          "component": "tab",
+          "label": "Anchor",
+          "name": "anchorTab"
+        },
+        {
+          "component": "text",
+          "name": "anchor-link-text",
+          "label": "Anchor Link Text"
+        },
+        {
+          "component": "text",
+          "name": "anchor-section-url",
+          "label": "Anchor Section URL",
+          "description": "This will appear in your URL following a #"
+        },
+        {
+          "component": "boolean",
+          "name": "show-back-to-link",
+          "label": "Show back to top link",
+          "description": "If checked, 'back to top' link will be visible at the end of the anchor section"
+        },
+        {
+          "component": "boolean",
+          "name": "exclude-from-anchor-link",
+          "label": "Exclude from Anchor Link",
+          "description": "Excludes anchor heading from anchor link component"
         }
       ]
     }
@@ -44,13 +82,25 @@
       "id": "section",
       "components": [
         "text",
-        "image",
-        "button",
         "title",
+        "footer",
+        "fragment",
+        "header",
+        "image",
+        "gallery",
         "hero",
-        "cards",
-        "columns",
-        "fragment"
+        "image-and-text-container",
+        "icon-and-text-container",
+        "link-list",
+        "logo-and-text-container",
+        "in-page-nav",
+        "video-player",
+        "in-page-alert",
+        "cta-link",
+        "app-download",
+        "table",
+        "disclaimer",
+        "accordion"
       ]
     }
   ]

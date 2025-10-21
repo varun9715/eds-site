@@ -1,0 +1,66 @@
+.block .image-item picture > img {
+  object-fit: cover;
+  max-height: 100%;
+  height: 100%;
+  width: auto;
+  border-radius: var(--border-radius-base-1-0);
+}
+
+.block .image-item figure {
+  margin: 0;
+  height: 100%;
+  display: block;
+}
+
+.block .image-item picture {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: var(--border-radius-base-1-0);
+  overflow: hidden;
+}
+
+.block .image-item .smart-crop-16-9 {
+  aspect-ratio: 16/9;
+}
+
+.block .image-item .smart-crop-4-5 {
+  aspect-ratio: 4/5;
+}
+
+.block .image-item .smart-crop-3-2 {
+  aspect-ratio: 3/2;
+}
+
+.block .image-item .smart-crop-5-4 {
+  aspect-ratio: 5/4;
+}
+
+.block .image-item .smart-crop-1-1 {
+  aspect-ratio: 1/1;
+}
+
+.block .image-item figure .caption {
+  margin: var(--spacing-alias-fixed-200) auto 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  flex-flow: column wrap;
+  max-width: var(--sizing-alias-typography-max-width-wide);
+  gap: var(--spacing-alias-fixed-100);
+}
+
+.block .image-item figure .caption p {
+  margin: 0;
+}
+
+/* Screen md or above */
+@media (min-width: 36rem) {
+  .block .image-item figure .caption {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "stylelint.vscode-stylelint",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "phoenisx.cssvar",
+        "vitest.explorer",
+        "streetsidesoftware.code-spell-checker",
+        "naumovs.color-highlight",
+    ]
+}

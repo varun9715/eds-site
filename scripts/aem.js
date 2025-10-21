@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Adobe. All rights reserved.
+ * Copyright 2024 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -10,18 +10,20 @@
  * governing permissions and limitations under the License.
  */
 
+import { attachTestId } from './utils/common-utils.js';
+
 /* eslint-env browser */
 function sampleRUM(checkpoint, data) {
   // eslint-disable-next-line max-len
   const timeShift = () => (window.performance ? window.performance.now() : Date.now() - window.hlx.rum.firstReadTime);
   try {
     window.hlx = window.hlx || {};
+    sampleRUM.enhance = () => {};
     if (!window.hlx.rum) {
-      sampleRUM.enhance = () => {};
       const param = new URLSearchParams(window.location.search).get('rum');
-      const weight = (param === 'on' && 1)
-        || (window.SAMPLE_PAGEVIEWS_AT_RATE === 'high' && 10)
+      const weight = (window.SAMPLE_PAGEVIEWS_AT_RATE === 'high' && 10)
         || (window.SAMPLE_PAGEVIEWS_AT_RATE === 'low' && 1000)
+        || (param === 'on' && 1)
         || 100;
       const id = Math.random().toString(36).slice(-4);
       const isSelected = param !== 'off' && Math.random() * weight < 1;
@@ -153,12 +155,11 @@ function setup() {
 }
 
 /**
- * Auto initialization.
+ * Auto initializiation.
  */
 
 function init() {
   setup();
-  sampleRUM.collectBaseURL = window.origin;
   sampleRUM();
 }
 
@@ -403,44 +404,6 @@ function wrapTextNodes(block) {
 }
 
 /**
- * Decorates paragraphs containing a single link as buttons.
- * @param {Element} element container element
- */
-function decorateButtons(element) {
-  element.querySelectorAll('a').forEach((a) => {
-    a.title = a.title || a.textContent;
-    if (a.href !== a.textContent) {
-      const up = a.parentElement;
-      const twoup = a.parentElement.parentElement;
-      if (!a.querySelector('img')) {
-        if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
-          a.className = 'button'; // default
-          up.classList.add('button-container');
-        }
-        if (
-          up.childNodes.length === 1
-          && up.tagName === 'STRONG'
-          && twoup.childNodes.length === 1
-          && twoup.tagName === 'P'
-        ) {
-          a.className = 'button primary';
-          twoup.classList.add('button-container');
-        }
-        if (
-          up.childNodes.length === 1
-          && up.tagName === 'EM'
-          && twoup.childNodes.length === 1
-          && twoup.tagName === 'P'
-        ) {
-          a.className = 'button secondary';
-          twoup.classList.add('button-container');
-        }
-      }
-    }
-  });
-}
-
-/**
  * Add <img> for icon, prefixed with codeBasePath and optional prefix.
  * @param {Element} [span] span element with icon classes
  * @param {string} [prefix] prefix to be added to icon src
@@ -455,8 +418,6 @@ function decorateIcon(span, prefix = '', alt = '') {
   img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
   img.alt = alt;
   img.loading = 'lazy';
-  img.width = 16;
-  img.height = 16;
   span.append(img);
 }
 
@@ -466,12 +427,31 @@ function decorateIcon(span, prefix = '', alt = '') {
  * @param {string} [prefix] prefix to be added to icon the src
  */
 function decorateIcons(element, prefix = '') {
-  const icons = element.querySelectorAll('span.icon');
+  const icons = [...element.querySelectorAll('span.icon')];
   icons.forEach((span) => {
     decorateIcon(span, prefix);
   });
 }
 
+function decorateOffsetSection(offsetSection) {
+  // Set test ID
+  offsetSection.dataset.testid = 'offset-section';
+
+  // Create wrapper and content containers
+  const wrapper = document.createElement('div');
+  const content = document.createElement('div');
+  content.classList.add('offset-section-content');
+
+  // Safely select metadata elements and move them into the new content container
+  const metadataItems = offsetSection.querySelectorAll('.section-metadata > div');
+  if (metadataItems.length) {
+    content.append(...metadataItems);
+  }
+
+  // Build DOM structure
+  wrapper.appendChild(content);
+  offsetSection.prepend(wrapper);
+}
 /**
  * Decorates all sections in a container element.
  * @param {Element} main The container element
@@ -484,13 +464,16 @@ function decorateSections(main) {
       if ((e.tagName === 'DIV' && e.className) || !defaultContent) {
         const wrapper = document.createElement('div');
         wrappers.push(wrapper);
+        // defaultContent refers to the basic blocks: title, text, and image.
         defaultContent = e.tagName !== 'DIV' || !e.className;
         if (defaultContent) wrapper.classList.add('default-content-wrapper');
       }
+      if (defaultContent) attachTestId({ parentEl: e });
       wrappers[wrappers.length - 1].append(e);
     });
     wrappers.forEach((wrapper) => section.append(wrapper));
     section.classList.add('section');
+    section.dataset.testid = 'section';
     section.dataset.sectionStatus = 'initialized';
     section.style.display = 'none';
 
@@ -498,6 +481,21 @@ function decorateSections(main) {
     const sectionMeta = section.querySelector('div.section-metadata');
     if (sectionMeta) {
       const meta = readBlockConfig(sectionMeta);
+      if (meta.type === 'offset-section') {
+        decorateOffsetSection(section);
+        delete meta.heading;
+        delete meta.text;
+        delete meta.cta1;
+        delete meta.cta2;
+        delete meta.campaignCode;
+      }
+
+      // Set section ID from metadata, required for anchor links
+      const anchorSectionUrl = meta['anchor-section-url'];
+      if (anchorSectionUrl) {
+        section.id = anchorSectionUrl;
+      }
+
       Object.keys(meta).forEach((key) => {
         if (key === 'style') {
           const styles = meta.style
@@ -512,6 +510,43 @@ function decorateSections(main) {
       sectionMeta.parentNode.remove();
     }
   });
+}
+
+/**
+ * Gets placeholders object.
+ * @param {string} [prefix] Location of placeholders
+ * @returns {object} Window placeholders object
+ */
+// eslint-disable-next-line import/prefer-default-export
+async function fetchPlaceholders(prefix = 'default') {
+  window.placeholders = window.placeholders || {};
+  if (!window.placeholders[prefix]) {
+    window.placeholders[prefix] = new Promise((resolve) => {
+      fetch(`${prefix === 'default' ? '' : prefix}/placeholders.json`)
+        .then((resp) => {
+          if (resp.ok) {
+            return resp.json();
+          }
+          return {};
+        })
+        .then((json) => {
+          const placeholders = {};
+          json.data
+            .filter((placeholder) => placeholder.Key)
+            .forEach((placeholder) => {
+              placeholders[toCamelCase(placeholder.Key)] = placeholder.Text;
+            });
+          window.placeholders[prefix] = placeholders;
+          resolve(window.placeholders[prefix]);
+        })
+        .catch(() => {
+          // error loading placeholders
+          window.placeholders[prefix] = {};
+          resolve(window.placeholders[prefix]);
+        });
+    });
+  }
+  return window.placeholders[`${prefix}`];
 }
 
 /**
@@ -590,6 +625,7 @@ function decorateBlock(block) {
   const shortBlockName = block.classList[0];
   if (shortBlockName && !block.dataset.blockStatus) {
     block.classList.add('block');
+    block.dataset.testid = `${shortBlockName.replace(/-/g, '')}-block`;
     block.dataset.blockName = shortBlockName;
     block.dataset.blockStatus = 'initialized';
     wrapTextNodes(block);
@@ -597,8 +633,6 @@ function decorateBlock(block) {
     blockWrapper.classList.add(`${shortBlockName}-wrapper`);
     const section = block.closest('.section');
     if (section) section.classList.add(`${shortBlockName}-container`);
-    // eslint-disable-next-line no-use-before-define
-    decorateButtons(block);
   }
 }
 
@@ -694,10 +728,10 @@ export {
   createOptimizedPicture,
   decorateBlock,
   decorateBlocks,
-  decorateButtons,
   decorateIcons,
   decorateSections,
   decorateTemplateAndTheme,
+  fetchPlaceholders,
   getMetadata,
   loadBlock,
   loadCSS,

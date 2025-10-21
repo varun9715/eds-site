@@ -1,0 +1,160 @@
+{
+  "definitions": [
+    {
+      "title": "CTA Link",
+      "id": "cta-link",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "CTA Link",
+              "model": "cta-link",
+              "styles": "first-cta-primary"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "cta-link",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Properties",
+          "name": "properties"
+        },
+        {
+          "component": "multiselect",
+          "name": "styles",
+          "label": "Style Options",
+          "valueType": "string",
+          "description": "Please hit the x to make both CTA's secondary",
+          "options": [
+            { "name": "First CTA Primary", "value": "first-cta-primary" },
+            {
+              "name": "Link Visual Width",
+              "children": [
+                { "name": "Fill Container", "value": "fill-container" },
+                { "name": "Hug Content", "value": "hug-content" }
+              ]
+            }
+          ]
+        },
+        {
+          "component": "tab",
+          "label": "Primary",
+          "name": "primaryCta"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link1_ctaText",
+          "label": "Link Label",
+          "value": "",
+          "required": true
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "link1_cta",
+          "label": "Link",
+          "value": "",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link1AriaLabel",
+          "label": "Aria Label",
+          "value": "",
+          "description": "Please refer to authoring guidelines before usage"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link1QueryParamKey",
+          "label": "Query Param Key",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link1QueryParamValue",
+          "label": "Query Param Value",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link1CampaignCode",
+          "label": "Campaign Code",
+          "value": "",
+          "valueFormat": "regexp",
+          "description": "Use only for marketing campaign tracking – letters, numbers and dashes permitted. Don’t use to track general or BAU content links",
+          "validation": {
+            "regExp": "^[a-zA-Z0-9-]+$",
+            "customErrorMsg": "Only (a-z), (A-Z), (0-9), and (-) is allowed in this field"
+          }
+        },
+        {
+          "component": "tab",
+          "label": "Secondary",
+          "name": "secondaryCta"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link2_ctaText",
+          "label": "Link Label",
+          "value": ""
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "link2_cta",
+          "label": "Link",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link2AriaLabel",
+          "label": "Aria Label",
+          "value": "",
+          "description": "Please refer to authoring guidelines before usage"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link2QueryParamKey",
+          "label": "Query Param Key",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link2QueryParamValue",
+          "label": "Query Param Value",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link2CampaignCode",
+          "label": "Campaign Code",
+          "value": "",
+          "valueFormat": "regexp",
+          "description": "Use only for marketing campaign tracking – letters, numbers and dashes permitted. Don’t use to track general or BAU content links",
+          "validation": {
+            "regExp": "^[a-zA-Z0-9-]+$",
+            "customErrorMsg": "Only (a-z), (A-Z), (0-9), and (-) is allowed in this field"
+          }
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

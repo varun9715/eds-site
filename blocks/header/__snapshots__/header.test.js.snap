@@ -1,0 +1,1190 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`decorate() > should match the rendered snapshot 1`] = `
+<div>
+  <div
+    class="top-bar"
+  >
+    <div
+      class="top-bar-content"
+    >
+      <div
+        class="section logo-container header-brand"
+        data-isnavigation="false"
+        data-section-status="loaded"
+        style=""
+      >
+        <div
+          class="header-brand-wrapper"
+        >
+          <div
+            class="logo-wrapper"
+          >
+            
+                
+            <div
+              class="logo block"
+              data-block-name="logo"
+              data-block-status="loaded"
+            >
+              
+                    
+              <a
+                aria-label="Home, Qantas Airways Logo"
+                data-wae-event="return_home_click"
+                href="http://localhost:3000/en-au/"
+              >
+                
+                        
+                <img
+                  alt="Home, Qantas Airways Logo"
+                  src="/icons/runway_brand_logo_partner_oneworld.svg"
+                />
+                
+                    
+              </a>
+              
+                
+            </div>
+            
+            
+          </div>
+          <div
+            class="logo-wrapper"
+          >
+            
+                
+            <div
+              class="logo block"
+              data-block-name="logo"
+              data-block-status="loaded"
+            >
+              
+                    
+              <a
+                aria-label="Qantas and Oneworld Travel Alliance"
+                href="http://localhost:3000/en-au/about-us/our-company"
+              >
+                
+                        
+                <img
+                  alt="Qantas and Oneworld Travel Alliance"
+                  src="/icons/runway_brand_logo_master_qantas_horiz.svg"
+                />
+                
+                    
+              </a>
+              
+                
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        class="section region-selector-container header-utilities"
+        data-section-status="loaded"
+        style=""
+      >
+        <div
+          class="region-selector-wrapper"
+        >
+          
+              
+          <div
+            class="region-selector block"
+            data-block-name="region-selector"
+            data-block-status="loaded"
+          >
+            
+                  
+            <a
+              aria-labelledby="regionSelector"
+              class="region-selector-anchor"
+              href="http://localhost:3000/en-au"
+            >
+              
+                      
+              <span
+                class="visually-hidden"
+                id="regionSelector"
+              >
+                Change country and language. Current selection: Australia, English
+              </span>
+              
+                      
+              <span
+                aria-hidden="true"
+                class="flag"
+              >
+                
+              
+                <img
+                  alt=""
+                  src="/icons/runway_country_flag_australia.svg"
+                />
+                
+            
+              </span>
+              
+                      
+              <span
+                aria-hidden="true"
+                class="region-label"
+              >
+                
+              
+                <span
+                  class="region"
+                >
+                  AU
+                </span>
+                
+                      
+                <span
+                  class="pipe"
+                >
+                  |
+                </span>
+                
+                      
+                <span
+                  class="lang"
+                >
+                  EN
+                </span>
+                
+                      
+              </span>
+              
+                  
+            </a>
+            
+              
+          </div>
+          
+          
+        </div>
+        <div
+          class="shopping-cart-widget-wrapper"
+        >
+          
+            
+          <div
+            class="shopping-cart-widget block widget-is-loaded"
+            data-block-name="shopping-cart-widget"
+            data-block-status="loaded"
+          >
+            
+              
+            <div
+              class="clearfix"
+              data-widget-type="shoppingcart"
+              id="shoppingcart"
+            >
+              
+                
+              <script
+                type="qantas/widget"
+              >
+                {"environment":"development","languageCode":"en","countryCode":"au"}
+              </script>
+              
+              
+            </div>
+            
+            
+          </div>
+          
+          
+        </div>
+        <div
+          class="login-wrapper"
+        >
+          
+            
+          <div
+            class="login block widget widget-is-loaded"
+            data-block-name="login"
+            data-block-status="loaded"
+          >
+            
+              
+            <div
+              class="qdd-login-ribbon-host"
+              data-widget-host="qdd-login-ribbon"
+            />
+            
+            
+          </div>
+          
+          
+        </div>
+        <button
+          aria-controls="main-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
+          class="mobile-menu-toggle mobile-nav-button"
+        >
+          <span
+            aria-hidden="true"
+            class="mask-icon"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+  <nav
+    aria-label="Main Menu"
+    class="navigation-bar visible-lg"
+    id="main-menu"
+  >
+    <div
+      class="navigation-bar-content"
+    >
+      <ul
+        class="main-navigation"
+      >
+        <li
+          class="navigation-menu"
+        >
+          <button
+            aria-controls="submenu-flights"
+            aria-expanded="false"
+            class="menu-title body-02"
+            data-wae-event="menu_click"
+            data-wae-menu-level="1"
+            data-wae-menu-type="header"
+          >
+            Flights
+          </button>
+          <div
+            class="submenu"
+            id="submenu-flights"
+          >
+            
+      
+            <div
+              class="submenu-mobile-header"
+            >
+              
+        
+              <button
+                aria-label="Go back"
+                class="submenu-back-button mobile-nav-button"
+              >
+                
+          
+                <span
+                  aria-hidden="true"
+                  class="mask-icon"
+                />
+                
+        
+              </button>
+              
+        
+              <span
+                class="submenu-title body-01"
+              >
+                Flights
+              </span>
+              
+        
+              <button
+                aria-label="Close menu"
+                class="submenu-close-button mobile-nav-button"
+              >
+                
+          
+                <span
+                  aria-hidden="true"
+                  class="mask-icon"
+                />
+                
+        
+              </button>
+              
+      
+            </div>
+            
+    
+            <div
+              class="submenu-content"
+            >
+              <div
+                class="menu-wrapper"
+              >
+                
+              
+                <div
+                  class="menu shortcuts block expanded"
+                  data-block-name="menu"
+                  data-block-status="loaded"
+                >
+                  
+                  
+                  <h3>
+                    Shortcut
+                  </h3>
+                  
+                  
+                  <ul
+                    class="menu"
+                  >
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Book flights"
+                      >
+                        <span
+                          class="icon icon-runway_pictogram_plane_tail_red"
+                        >
+                          <img
+                            alt=""
+                            data-icon-name="runway_pictogram_plane_tail_red"
+                            loading="lazy"
+                            src="/icons/runway_pictogram_plane_tail_red.svg"
+                          />
+                        </span>
+                        Book flights
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Check-in"
+                      >
+                        <span
+                          class="icon icon-runway_pictogram_boarding_passes_plane"
+                        >
+                          <img
+                            alt=""
+                            data-icon-name="runway_pictogram_boarding_passes_plane"
+                            loading="lazy"
+                            src="/icons/runway_pictogram_boarding_passes_plane.svg"
+                          />
+                        </span>
+                        Check-in
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Manage booking"
+                      >
+                        <span
+                          class="icon icon-runway_pictogram_cogwheel_with_plane"
+                        >
+                          <img
+                            alt=""
+                            data-icon-name="runway_pictogram_cogwheel_with_plane"
+                            loading="lazy"
+                            src="/icons/runway_pictogram_cogwheel_with_plane.svg"
+                          />
+                        </span>
+                        Manage booking
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Flight status"
+                      >
+                        <span
+                          class="icon icon-runway_pictogram_plane_with_clock"
+                        >
+                          <img
+                            alt=""
+                            data-icon-name="runway_pictogram_plane_with_clock"
+                            loading="lazy"
+                            src="/icons/runway_pictogram_plane_with_clock.svg"
+                          />
+                        </span>
+                        Flight status
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Baggage"
+                      >
+                        <span
+                          class="icon icon-runway_pictogram_baggage_additional_payment"
+                        >
+                          <img
+                            alt=""
+                            data-icon-name="runway_pictogram_baggage_additional_payment"
+                            loading="lazy"
+                            src="/icons/runway_pictogram_baggage_additional_payment.svg"
+                          />
+                        </span>
+                        Baggage
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Travel credits"
+                      >
+                        <span
+                          class="icon icon-runway_pictogram_ticket_multi_trip"
+                        >
+                          <img
+                            alt=""
+                            data-icon-name="runway_pictogram_ticket_multi_trip"
+                            loading="lazy"
+                            src="/icons/runway_pictogram_ticket_multi_trip.svg"
+                          />
+                        </span>
+                        Travel credits
+                      </a>
+                    </li>
+                    
+                  
+                  </ul>
+                  
+              
+                </div>
+                
+          
+              </div>
+              <div
+                class="menu-wrapper"
+              >
+                
+              
+                <div
+                  class="menu block"
+                  data-block-name="menu"
+                  data-block-status="loaded"
+                >
+                  
+                  
+                  <h3>
+                    Book
+                  </h3>
+                  
+                  
+                  <ul
+                    class="menu"
+                  >
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Book flights"
+                      >
+                        Book flights
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Multi city"
+                      >
+                        Multi city
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Group travel"
+                      >
+                        Group travel
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Flight deals"
+                      >
+                        Flight deals
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Timetables"
+                      >
+                        Timetables
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Network & partner airlines"
+                      >
+                        Network & partner airlines
+                      </a>
+                    </li>
+                    
+                  
+                  </ul>
+                  
+              
+                </div>
+                
+          
+              </div>
+              <div
+                class="menu-wrapper"
+              >
+                
+              
+                <div
+                  class="menu block"
+                  data-block-name="menu"
+                  data-block-status="loaded"
+                >
+                  
+                  
+                  <h3>
+                    Prepare to fly
+                  </h3>
+                  
+                  
+                  <ul
+                    class="menu"
+                  >
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Book flights"
+                      >
+                        Book flights
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Multi city"
+                      >
+                        Multi city
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Group travel"
+                      >
+                        Group travel
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Flight deals"
+                      >
+                        Flight deals
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Timetables"
+                      >
+                        Timetables
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Network & partner airlines"
+                      >
+                        Network & partner airlines
+                      </a>
+                    </li>
+                    
+                  
+                  </ul>
+                  
+              
+                </div>
+                
+          
+              </div>
+              <div
+                class="menu-wrapper"
+              >
+                
+              
+                <div
+                  class="menu block"
+                  data-block-name="menu"
+                  data-block-status="loaded"
+                >
+                  
+                  
+                  <h3>
+                    Qantas experience
+                  </h3>
+                  
+                  
+                  <ul
+                    class="menu"
+                  >
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Book flights"
+                      >
+                        Book flights
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Multi city"
+                      >
+                        Multi city
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Group travel"
+                      >
+                        Group travel
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Flight deals"
+                      >
+                        Flight deals
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Timetables"
+                      >
+                        Timetables
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Network & partner airlines"
+                      >
+                        Network & partner airlines
+                      </a>
+                    </li>
+                    
+                  
+                  </ul>
+                  
+              
+                </div>
+                
+          
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="navigation-menu"
+        >
+          <button
+            aria-controls="submenu-travel"
+            aria-expanded="false"
+            class="menu-title body-02"
+            data-wae-event="menu_click"
+            data-wae-menu-level="1"
+            data-wae-menu-type="header"
+          >
+            Travel
+          </button>
+          <div
+            class="submenu"
+            id="submenu-travel"
+          >
+            
+      
+            <div
+              class="submenu-mobile-header"
+            >
+              
+        
+              <button
+                aria-label="Go back"
+                class="submenu-back-button mobile-nav-button"
+              >
+                
+          
+                <span
+                  aria-hidden="true"
+                  class="mask-icon"
+                />
+                
+        
+              </button>
+              
+        
+              <span
+                class="submenu-title body-01"
+              >
+                Travel
+              </span>
+              
+        
+              <button
+                aria-label="Close menu"
+                class="submenu-close-button mobile-nav-button"
+              >
+                
+          
+                <span
+                  aria-hidden="true"
+                  class="mask-icon"
+                />
+                
+        
+              </button>
+              
+      
+            </div>
+            
+    
+            <div
+              class="submenu-content"
+            >
+              <div
+                class="menu-wrapper"
+              >
+                
+              
+                <div
+                  class="menu block expanded"
+                  data-block-name="menu"
+                  data-block-status="loaded"
+                >
+                  
+                  
+                  <h3>
+                    Book travels
+                  </h3>
+                  
+                  
+                  <ul
+                    class="menu"
+                  >
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Hotels"
+                      >
+                        Hotels
+                      </a>
+                    </li>
+                    
+                  
+                  </ul>
+                  
+              
+                </div>
+                
+          
+              </div>
+              <div
+                class="menu-wrapper"
+              >
+                
+              
+                <div
+                  class="menu block"
+                  data-block-name="menu"
+                  data-block-status="loaded"
+                >
+                  
+                  
+                  <h3>
+                    Qantas experience
+                  </h3>
+                  
+                  
+                  <ul
+                    class="menu"
+                  >
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Book flights"
+                      >
+                        Book flights
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Multi city"
+                      >
+                        Multi city
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Group travel"
+                      >
+                        Group travel
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Flight deals"
+                      >
+                        Flight deals
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Timetables"
+                      >
+                        Timetables
+                      </a>
+                    </li>
+                    
+                      
+                    <li>
+                      <a
+                        class=""
+                        data-wae-event="menu_click"
+                        data-wae-menu-level="2"
+                        data-wae-menu-type="header"
+                        href="#"
+                        title="Network & partner airlines"
+                      >
+                        Network & partner airlines
+                      </a>
+                    </li>
+                    
+                  
+                  </ul>
+                  
+              
+                </div>
+                
+          
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div
+        class="section help-container header-supporting"
+        data-section-status="loaded"
+        style=""
+      >
+        <div
+          class="region-selector-wrapper mobile-region-selector-wrapper"
+        >
+          
+              
+          <div
+            class="region-selector block"
+            data-block-name="region-selector"
+            data-block-status="loaded"
+          >
+            
+                  
+            <a
+              aria-labelledby="regionSelectorMobile"
+              class="region-selector-anchor"
+              href="http://localhost:3000/en-au"
+            >
+              
+                      
+              <span
+                class="visually-hidden"
+                id="regionSelectorMobile"
+              >
+                Change country and language. Current selection: Australia, English
+              </span>
+              
+                      
+              <span
+                aria-hidden="true"
+                class="flag"
+              >
+                
+              
+                <img
+                  alt=""
+                  src="/icons/runway_country_flag_australia.svg"
+                />
+                
+            
+              </span>
+              
+                      
+              <span
+                aria-hidden="true"
+                class="region-label"
+              >
+                
+              
+                <span
+                  class="region"
+                >
+                  AU
+                </span>
+                
+                      
+                <span
+                  class="pipe"
+                >
+                  |
+                </span>
+                
+                      
+                <span
+                  class="lang"
+                >
+                  EN
+                </span>
+                
+                      
+              </span>
+              
+                  
+            </a>
+            
+              
+          </div>
+          
+          
+        </div>
+        
+          
+        <div
+          class="help-wrapper"
+        >
+          
+              
+          <div
+            class="help block"
+            data-block-name="help"
+            data-block-status="loaded"
+          >
+            
+                  
+            <a
+              aria-label="Help"
+              href="https://help.qantas.com/support/s/"
+            >
+              
+                      
+              <img
+                alt=""
+                aria-hidden="true"
+                src="/icons/runway_icon_question_mark.svg"
+              />
+              
+                      
+              <span>
+                Help
+              </span>
+              
+                  
+            </a>
+            
+              
+          </div>
+          
+          
+        </div>
+        
+      
+      </div>
+    </div>
+    <div
+      class="submenu-scrim"
+    />
+  </nav>
+</div>
+`;

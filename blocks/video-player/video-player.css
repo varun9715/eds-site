@@ -1,0 +1,30 @@
+.video-player p {
+  margin:0
+}
+
+.video-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-alias-fixed-100);
+  margin: 0 auto;
+}
+
+.video-player.medium {
+  padding: 0 var(--body-margin);
+}
+
+.video-player .video-frame {
+  display: block;
+  border-radius: var(--border-radius-base-1-0);
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-base-neutral-black);
+}
+
+.video-player .caption {
+  display: flex;
+  width: 100%;
+}

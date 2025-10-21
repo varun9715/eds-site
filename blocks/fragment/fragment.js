@@ -17,10 +17,17 @@ import {
  * @param {string} path The path to the fragment
  * @returns {HTMLElement} The root element of the fragment
  */
-export async function loadFragment(path) {
-  if (path && path.startsWith('/')) {
+export async function loadFragment(url) {
+  let path = url;
+
+  // if it is an external site, prepend the codeBasePath
+  if (window.hlx?.isExternalSite && window.hlx?.codeBasePath) {
+    path = `${window.hlx.codeBasePath}${path}`;
+  }
+
+  if (path) {
     // eslint-disable-next-line no-param-reassign
-    path = path.replace(/(\.plain)?\.html/, '');
+    path = `${path.replace(/(\.plain)?\.html/, '')}`;
     const resp = await fetch(`${path}.plain.html`);
     if (resp.ok) {
       const main = document.createElement('main');

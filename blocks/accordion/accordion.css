@@ -1,0 +1,158 @@
+.accordion.block {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion.block .expand-all-button {
+  align-self: end;
+  margin-bottom: var(--spacing-alias-fixed-300);
+  color: var(--color-alias-interactive-primary-enabled);
+  text-decoration: underline;
+  font-weight: 400;
+  background: none;
+  min-height: auto;
+  padding: 0;
+}
+
+.accordion.block .expand-all-button:hover {
+  color: var(--color-alias-interactive-primary-hover);
+}
+
+.accordion.block .expand-all-button:focus-visible {
+  color: var(--color-alias-interactive-primary-enabled);
+  outline: var(--border-width-alias-text-link) solid
+    var(--color-alias-interactive-focus-on-light);
+  outline-offset: var(--outline-offset-alias-text-link);
+  border-radius: var(--border-width-base-2-0);
+}
+
+.accordion.block .expand-all-button:active {
+  color: var(--color-alias-interactive-link-enabled-foreground);
+}
+
+.accordion.block .accordion-item h3,
+.accordion.block .accordion-item h4 {
+  margin-bottom: 0;
+}
+
+.accordion.block .accordion-item .accordion-panel {
+  padding: var(--spacing-alias-fixed-100) var(--spacing-alias-fixed-50)
+    var(--spacing-alias-fixed-300);
+  display: none;
+  margin-bottom: 0;
+}
+
+.accordion.author-edit.block .accordion-item .accordion-panel {
+  display: block;
+}
+
+.accordion.block .accordion-item .accordion-panel p,
+.accordion.block .accordion-item .accordion-panel ul {
+  margin-bottom: var(--spacing-alias-fixed-200);
+}
+
+.accordion.block .accordion-item .accordion-panel ul {
+  margin-top: 0;
+}
+
+.accordion.block .accordion-item .accordion-panel p.has-anchor {
+  margin-bottom: 0;
+}
+
+.accordion.block .accordion-item .accordion-panel a.standalone {
+  margin: var(--spacing-alias-fixed-100) 0 var(--spacing-alias-fixed-100);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-alias-fixed-50);
+}
+
+.accordion.block .accordion-item .accordion-panel a.standalone:hover {
+  color: var(--color-alias-interactive-link-hover-foreground);
+}
+
+.accordion.block .accordion-item .accordion-panel a.standalone:active {
+  color: var(--color-alias-interactive-link-enabled-foreground);
+}
+
+.accordion.block .accordion-item .accordion-panel a.standalone:visited {
+  color: var(--color-alias-interactive-link-visited-foreground);
+}
+
+.accordion.block .accordion-item .accordion-panel a.standalone::after {
+  content: '';
+  flex-shrink: 0;
+  display: inline-block;
+  width: var(--sizing-alias-icon-frame-sm);
+  height: var(--sizing-alias-icon-frame-sm);
+  background-color: currentColor;
+  mask: url('../../icons/runway_icon_arrow_right.svg') no-repeat center / contain;
+}
+
+.accordion.block .accordion-item .accordion-button > * {
+  margin: 0;
+}
+
+.accordion.block .accordion-item.active .accordion-panel {
+  display: block;
+}
+
+.accordion.block .accordion-item .accordion-button {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  padding: var(--spacing-alias-fixed-200) var(--spacing-alias-fixed-50);
+  align-items: center;
+  gap: var(--spacing-alias-fixed-150);
+  color: var(--color-alias-text-primary);
+  background: none;
+  width: 100%;
+  border-radius: 0;
+  overflow: unset;
+  white-space: unset;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.accordion.block .accordion-item .accordion-button:focus-visible {
+  outline: var(--border-width-alias-text-link) solid
+    var(--color-alias-interactive-focus-on-light);
+  outline-offset: calc(-1 * var(--border-width-alias-button));
+  border-radius: var(--border-width-base-2-0);
+}
+
+.accordion.block .accordion-item .accordion-button:hover {
+  background: var(--color-base-neutral-10);
+}
+
+.accordion.block .accordion-item .accordion-button::after {
+  width: var(--sizing-alias-icon-frame-xs);
+  height: var(--sizing-alias-icon-frame-xs);
+  content: ' ';
+  mask: url('../../icons/runway_icon_chevron_small_down.svg');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+.accordion.block[data-expand-all-active='true'] .accordion-item .accordion-button::after {
+  display: none;
+}
+
+.accordion[data-expand-all-active='true'] .accordion-button {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.accordion.block .accordion-item.active .accordion-button::after {
+  mask: url('../../icons/runway_icon_chevron_small_up.svg');
+  mask-size: contain;
+}
+
+.accordion.block .accordion-item {
+  border-top: var(--border-width-base-1-0) solid var(--color-base-neutral-15);
+}
+
+.accordion.block .accordion-item:last-child {
+  border-bottom: var(--border-width-base-1-0) solid var(--color-base-neutral-15);
+}

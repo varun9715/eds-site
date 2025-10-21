@@ -1,0 +1,32 @@
+{
+  "fields": [
+    {
+      "component": "tab",
+      "label": "Anchor",
+      "name": "anchorTab"
+    },
+    {
+      "component": "text",
+      "name": "anchor-link-text",
+      "label": "Anchor Link Text"
+    },
+    {
+      "component": "text",
+      "name": "anchor-section-url",
+      "label": "Anchor Section URL",
+      "description": "This will appear in your URL following a #"
+    },
+    {
+      "component": "boolean",
+      "name": "show-back-to-link",
+      "label": "Show back to top link",
+      "description": "If checked, 'back to top' link will be visible at the end of the anchor section"
+    },
+    {
+      "component": "boolean",
+      "name": "exclude-from-anchor-link",
+      "label": "Exclude from Anchor Link",
+      "description": "Excludes anchor heading from anchor link component"
+    }
+  ]
+}

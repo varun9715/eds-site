@@ -2,11 +2,18 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "offset-section",
+      "header-section",
+      "footer-section",
+      "tab-section"
     ]
   },
   {
     "...": "./_section.json#/filters"
+  },
+  {
+    "...": "./_offset-section.json#/filters"
   },
   {
     "...": "../blocks/*/_*.json#/filters"

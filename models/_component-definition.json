@@ -11,9 +11,6 @@
           "...": "./_title.json#/definitions"
         },
         {
-          "...": "./_image.json#/definitions"
-        },
-        {
           "...": "./_button.json#/definitions"
         }
       ]
@@ -24,6 +21,12 @@
       "components": [
         {
           "...": "./_section.json#/definitions"
+        },
+        {
+          "...": "./_offset-section.json#/definitions"
+        },
+        {
+          "...": "../blocks/*/_tab-section.json#/definitions"
         }
       ]
     },

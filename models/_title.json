@@ -8,7 +8,8 @@
           "page": {
             "resourceType": "core/franklin/components/title/v1/title",
             "template": {
-              "model": "title"
+              "model": "title",
+              "titleType": "h2"
             }
           }
         }
@@ -22,17 +23,17 @@
         {
           "component": "text",
           "name": "title",
-          "label": "Title"
+          "label": "Heading",
+          "required": true
         },
         {
           "component": "select",
           "name": "titleType",
-          "label": "Title Type",
+          "label": "Type/Size",
+          "value": "h2",
+          "valueType": "string",
+          "required": true,
           "options": [
-            {
-              "name": "h1",
-              "value": "h1"
-            },
             {
               "name": "h2",
               "value": "h2"
@@ -44,14 +45,6 @@
             {
               "name": "h4",
               "value": "h4"
-            },
-            {
-              "name": "h5",
-              "value": "h5"
-            },
-            {
-              "name": "h6",
-              "value": "h6"
             }
           ]
         }

@@ -1,0 +1,120 @@
+:root {
+  --in-page-alert-border-radius: var(--border-radius-base-1-0);
+  --in-page-alert-padding: var(--spacing-alias-fixed-100) var(--spacing-alias-fixed-250);
+  --in-page-alert-margin: var(--spacing-alias-fixed-200);
+  --in-page-alert-gap: var(--spacing-alias-fixed-200);
+  --in-page-alert-flex: 1 0 0;
+  --in-page-alert-icon-size: var(--spacing-alias-fixed-300);
+  --in-page-alert-font-weight-400: 400;
+  --in-page-alert-font-weight-500: 500;
+  --in-page-alert-border-size: var(--border-width-base-1-0);
+}
+
+main > .section > div.in-page-alert-wrapper,
+.in-page-alert {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.in-page-alert > div {
+  display: flex;
+  align-items: flex-start;
+  margin: var(--in-page-alert-margin) 0;
+  padding: var(--in-page-alert-padding);
+  gap: var(--in-page-alert-gap);
+  border-radius: var(--in-page-alert-border-radius);
+  border: var(--in-page-alert-border-size) solid var(--color-base-neutral-20);
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.in-page-alert > div::before {
+  content: '';
+  display: inline-block;
+  width: var(--in-page-alert-icon-size);
+  height: var(--in-page-alert-icon-size);
+  flex-shrink: 0;
+  margin-top: var(--spacing-comp-web-spacer-md);
+}
+
+/******** Icon Classes *********/
+
+/** Information */
+.in-page-alert--information::before {
+  background: url('../../icons/runway_icon_notification_info.svg') no-repeat center center;
+}
+
+.in-page-alert--information {
+  background: var(--color-base-teal-05);
+}
+
+/** Alert */
+.in-page-alert--alert::before {
+  background: url('../../icons/runway_icon_notification_warning.svg') no-repeat center
+    center;
+}
+
+.in-page-alert--alert {
+  background: var(--color-base-amber-05);
+}
+
+/** Success */
+.in-page-alert--success::before {
+  background: url('../../icons/runway_icon_notification_success.svg') no-repeat center
+    center;
+}
+
+.in-page-alert--success {
+  background: var(--color-alias-notification-success-background);
+}
+
+/** Error */
+.in-page-alert--error::before {
+  background: url('../../icons/runway_icon_notification_error.svg') no-repeat center
+    center;
+}
+
+.in-page-alert--error {
+  background: var(--color-alias-notification-error-background);
+}
+
+/** Critical */
+.in-page-alert--critical::before {
+  background: url('../../icons/runway_icon_notification_critical.svg') no-repeat center
+    center;
+}
+
+.in-page-alert--critical {
+  background: var(--color-base-neutral-80);
+  border-radius: var(--in-page-alert-border-radius);
+}
+
+/******** EOF Icon Classes *********/
+
+/******** Text Content Classes *********/
+.in-page-alert-text-content {
+  display: flex;
+  padding: var(--spacing-comp-web-spacer-md) 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-alias-fixed-50);
+  align-self: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+.in-page-alert--content,
+.in-page-alert--content p:last-child {
+  margin-bottom: 0;
+}
+
+.in-page-alert--content a {
+  color: var(--color-alias-text-primary);
+  font-weight: var(--in-page-alert-font-weight-500);
+}
+
+.in-page-alert-text-content .caption {
+  color: var(--color-alias-text-secondary);
+  margin-bottom: 0;
+  overflow-wrap: anywhere;
+}

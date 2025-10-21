@@ -1,0 +1,190 @@
+main .in-page-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding-left: var(--spacing-alias-fixed-400);
+}
+
+main .in-page-nav::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--sizing-base-0-5);
+  background: var(--color-alias-interactive-primary-enabled);
+}
+
+main .in-page-nav .nav-heading.title-01 {
+  margin-bottom: var(--spacing-alias-responsive-300-to-1200);
+}
+
+main .in-page-nav .show-more-button.body-01 {
+  margin-bottom: 0;
+}
+
+main .in-page-nav .nav-links-wrapper {
+  width: 100%;
+}
+
+main .in-page-nav .nav-list {
+  column-count: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-wrap: break-word;
+  column-gap: var(--spacing-alias-fixed-300);
+}
+
+/* Base styles — mobile-first */
+main .in-page-nav .nav-list li {
+  display: none;
+}
+
+main .in-page-nav .nav-list li:nth-child(-n + 5),
+main .in-page-nav.expanded .nav-list li {
+  display: list-item;
+}
+
+@media (min-width: 36rem) {
+  main .in-page-nav {
+    padding-left: var(--spacing-alias-fixed-400);
+  }
+
+  main .in-page-nav .nav-heading.title-01 {
+    margin-bottom: var(--spacing-alias-responsive-200-to-600);
+  }
+
+  main .in-page-nav .nav-list:has(li:nth-child(6)) {
+    column-count: 2;
+  }
+
+  main .in-page-nav .nav-list li {
+    display: list-item;
+  }
+}
+
+/* Screen lg or above */
+@media (min-width: 64rem) {
+  main .in-page-nav {
+    padding-left: var(--spacing-alias-fixed-500);
+  }
+}
+
+/* List item styles */
+main .in-page-nav li {
+  break-inside: avoid;
+  padding: var(--spacing-base-1-0) 0;
+}
+
+main .in-page-nav li:not(:first-child) {
+  margin-top: var(--spacing-alias-fixed-50);
+}
+
+/* Link styles */
+main .in-page-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-alias-fixed-100);
+  text-decoration: none;
+  color: var(--color-alias-text-primary);
+  margin-bottom: 0;
+  position: relative;
+  transition:
+    color 0.2s ease,
+    text-decoration 0.2s ease;
+}
+
+main .in-page-nav .nav-link::before {
+  content: '';
+  display: inline-block;
+  min-width: var(--sizing-alias-icon-frame-xs);
+  height: var(--sizing-alias-icon-frame-xs);
+  background-color: var(--color-alias-text-primary);
+  mask: url('../../icons/runway_icon_arrow_down.svg') no-repeat center / contain;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover (even if visited): red text + icon + underline */
+main .in-page-nav .nav-link:hover,
+main .in-page-nav .nav-link:visited:hover {
+  color: var(--color-base-red-60);
+  text-decoration: underline;
+  text-decoration-thickness: var(--paragraph-spacing-base-100);
+  text-underline-offset: var(--spacing-alias-fixed-25);
+}
+
+main .in-page-nav .nav-link:hover::before,
+main .in-page-nav .nav-link:visited:hover::before {
+  background-color: var(--color-alias-interactive-primary-enabled);
+}
+
+/* Focus: outline only (no color or icon change) */
+main .in-page-nav .nav-link:focus {
+  color: var(--color-alias-text-primary);
+  border-radius: var(--border-width-alias-text-link);
+  text-decoration: none;
+}
+
+main .in-page-nav .nav-link:focus::before {
+  background-color: var(--color-alias-text-primary);
+}
+
+/* Active (pressed): no underline, default color */
+main .in-page-nav .nav-link:active,
+main .in-page-nav .nav-link:visited:active {
+  color: var(--color-alias-text-primary);
+  text-decoration: none;
+  outline: none;
+}
+
+main .in-page-nav .nav-link:active::before,
+main .in-page-nav .nav-link:visited:active::before {
+  background-color: var(--color-alias-interactive-primary-enabled);
+}
+
+/* Visited (idle) */
+main .in-page-nav .nav-link:visited {
+  color: var(--color-alias-interactive-link-visited-foreground);
+}
+
+main .in-page-nav .show-more-button .label {
+  text-align: justify;
+}
+
+.show-more-button .label.body-01 {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+/* Show more toggle */
+main .in-page-nav .show-more-button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-family-base-body);
+  color: var(--color-alias-interactive-primary-enabled);
+  text-decoration: underline;
+  text-decoration-thickness: var(--paragraph-spacing-base-100);
+  text-underline-offset: var(--spacing-alias-fixed-25);
+  background: none;
+  border: none;
+  margin-top: var(--spacing-alias-fixed-300);
+  padding: var(--sizing-alias-fixed-100) 0;
+  gap: var(--spacing-comp-web-spacer-md);
+}
+
+main .in-page-nav .show-more-button .chevron {
+  width: var(--sizing-alias-icon-frame-xs);
+  height: var(--sizing-alias-icon-frame-xs);
+  display: inline-block;
+  background-color: var(--color-alias-interactive-primary-enabled);
+  mask: url('../../icons/runway_icon_chevron_down.svg') no-repeat center / contain;
+  transition: transform 0.3s ease;
+}
+
+main .in-page-nav.expanded .show-more-button .chevron {
+  transform: rotate(180deg);
+}

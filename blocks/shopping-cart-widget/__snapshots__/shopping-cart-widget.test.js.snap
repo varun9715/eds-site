@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Shopping Cart Widget > generates correct widget snapshot 1`] = `
+"
+    <div data-widget-type="shoppingcart" id="shoppingcart" class="clearfix">
+      <script type="qantas/widget">{"environment":"testing","languageCode":"en","countryCode":"AU"}</script>
+    </div>
+  "
+`;

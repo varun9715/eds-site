@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`video embed block > creates a snapshot of the embedded video block 1`] = `"<div class="video-frame"><iframe></iframe><iframe src="https://www.youtube.com/embed/abc123?cc_load_policy=1" title="Content from youtube" allowfullscreen="" style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; border-radius: inherit;" allow="fullscreen; encrypted-media; accelerometer; gyroscope; picture-in-picture"></iframe>null</div>"`;

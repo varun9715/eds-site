@@ -1,0 +1,44 @@
+{
+  "definitions": [
+    {
+      "title": "Button",
+      "id": "button",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/button/v1/button",
+            "template": {
+              "model": "button"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "cta",
+      "fields": [
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link"
+        },
+        {
+          "component": "text",
+          "name": "linkText",
+          "label": "Text"
+        },
+        {
+          "component": "text",
+          "name": "linkTitle",
+          "label": "Title"
+        },
+        {
+          "...": "elements/_cta-classes.json#/fields"
+        }
+      ]
+    }
+  ]
+}
+  

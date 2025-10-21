@@ -1,61 +1,21 @@
 [
   {
-    "id": "page-metadata",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "jcr:title",
-        "label": "Title"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "jcr:description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "keywords",
-        "multi": true,
-        "label": "Keywords"
-      }
-    ]
-  },
-  {
-    "id": "image",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Alt Text"
-      }
-    ]
-  },
-  {
     "id": "title",
     "fields": [
       {
         "component": "text",
         "name": "title",
-        "label": "Title"
+        "label": "Heading",
+        "required": true
       },
       {
         "component": "select",
         "name": "titleType",
-        "label": "Title Type",
+        "label": "Type/Size",
+        "value": "h2",
+        "valueType": "string",
+        "required": true,
         "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
           {
             "name": "h2",
             "value": "h2"
@@ -67,14 +27,6 @@
           {
             "name": "h4",
             "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
           }
         ]
       }
@@ -123,6 +75,11 @@
     "id": "section",
     "fields": [
       {
+        "component": "tab",
+        "label": "General",
+        "name": "generalTab"
+      },
+      {
         "component": "text",
         "name": "name",
         "label": "Section Name",
@@ -131,13 +88,375 @@
       {
         "component": "multiselect",
         "name": "style",
-        "label": "Style",
+        "label": "Styles",
         "options": [
           {
-            "name": "Highlight",
-            "value": "highlight"
+            "name": "Text Align",
+            "children": [
+              {
+                "name": "Center",
+                "value": "text-center"
+              }
+            ]
           }
         ]
+      },
+      {
+        "component": "tab",
+        "label": "Anchor",
+        "name": "anchorTab"
+      },
+      {
+        "component": "text",
+        "name": "anchor-link-text",
+        "label": "Anchor Link Text"
+      },
+      {
+        "component": "text",
+        "name": "anchor-section-url",
+        "label": "Anchor Section URL",
+        "description": "This will appear in your URL following a #"
+      },
+      {
+        "component": "boolean",
+        "name": "show-back-to-link",
+        "label": "Show back to top link",
+        "description": "If checked, 'back to top' link will be visible at the end of the anchor section"
+      },
+      {
+        "component": "boolean",
+        "name": "exclude-from-anchor-link",
+        "label": "Exclude from Anchor Link",
+        "description": "Excludes anchor heading from anchor link component"
+      }
+    ]
+  },
+  {
+    "id": "offset-section",
+    "fields": [
+      {
+        "component": "tab",
+        "label": "General",
+        "name": "generalTab"
+      },
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Styles",
+        "value": "",
+        "options": [
+          {
+            "name": "Background colour",
+            "children": [
+              {
+                "name": "Grey",
+                "value": "background-grey"
+              }
+            ]
+          },
+          {
+            "name": "Curve",
+            "children": [
+              {
+                "name": "Disable",
+                "value": "disable-curve"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "tab",
+        "label": "Offset Content",
+        "name": "contentTab"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "type",
+        "label": "Section Type",
+        "value": "offset-section",
+        "hidden": true
+      },
+      {
+        "component": "text",
+        "name": "heading",
+        "label": "Title",
+        "valueType": "string",
+        "value": "Headline",
+        "required": true
+      },
+      {
+        "component": "select",
+        "name": "headingType",
+        "label": "Heading Type",
+        "valueType": "string",
+        "value": "h2",
+        "required": true,
+        "options": [
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "cta1",
+        "label": "Link 1",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta1Text",
+        "label": "CTA Text 1",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "cta2",
+        "label": "Link 2",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta2Text",
+        "label": "CTA Text 2",
+        "value": ""
+      },
+      {
+        "component": "tab",
+        "label": "Anchor",
+        "name": "anchorTab"
+      },
+      {
+        "component": "text",
+        "name": "anchor-link-text",
+        "label": "Anchor Link Text"
+      },
+      {
+        "component": "text",
+        "name": "anchor-section-url",
+        "label": "Anchor Section URL",
+        "description": "This will appear in your URL following a #"
+      },
+      {
+        "component": "boolean",
+        "name": "show-back-to-link",
+        "label": "Show back to top link",
+        "description": "If checked, 'back to top' link will be visible at the end of the anchor section"
+      },
+      {
+        "component": "boolean",
+        "name": "exclude-from-anchor-link",
+        "label": "Exclude from Anchor Link",
+        "description": "Excludes anchor heading from anchor link component"
+      }
+    ]
+  },
+  {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "tab",
+        "label": "General",
+        "name": "general"
+      },
+      {
+        "component": "text-input",
+        "name": "jcr:title",
+        "label": "Title",
+        "required": true,
+        "description": "Defines the the page meta title for SEO, as well as a title displayable in the page content (unless and overriding 'Page Title' below is defined)."
+      },
+      {
+        "component": "text-input",
+        "name": "pageTitle",
+        "label": "Page Title",
+        "description": "Defines a page title that is displayable in the page content, instead of the 'Title'"
+      },
+      {
+        "component": "boolean",
+        "label": "Hide Breadcrumb Component In Page",
+        "name": "hidebreadcrumb",
+        "valueType": "boolean"
+      },
+      {
+        "component": "boolean",
+        "label": "Hide In Navigation",
+        "name": "hideinnavigation",
+        "valueType": "boolean"
+      }
+    ]
+  },
+  {
+    "id": "accordion",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "description": "The accordion item heading HTML element.",
+        "name": "headingType",
+        "value": "h3",
+        "label": "Heading Type",
+        "options": [
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "name": "isExpandFirstAccordion",
+        "valueType": "boolean",
+        "label": "Expand First Accordion",
+        "description": "When enabled the first accordion is expanded by default.",
+        "value": ""
+      },
+      {
+        "component": "boolean",
+        "label": "FAQ",
+        "name": "faq",
+        "valueType": "boolean",
+        "description": "Enable this toggle if the accordion block is intended to be used as an FAQ."
+      }
+    ]
+  },
+  {
+    "id": "accordion-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "description": "This will appear in your URL following a #. Use lowercase English letters and hyphens as word separators.",
+        "name": "id",
+        "value": "",
+        "label": "ID",
+        "valueFormat": "regexp",
+        "validation": {
+          "regExp": "^[a-z]+(-[a-z]+)*$",
+          "customErrorMsg": "Use lowercase English letters and hyphens as word separators."
+        }
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "app-download",
+    "fields": [
+      {
+        "component": "tab",
+        "label": "Link 1",
+        "name": "tab-link1"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "link1_image",
+        "label": "Image 1",
+        "description": "Recommended asset type SVG.",
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "link1_imageMimeType"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link1_link",
+        "value": "",
+        "label": "Link 1",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "link1_imageAlt",
+        "label": "Alternative Text for Accessibility 1",
+        "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "tab",
+        "label": "Link 2",
+        "name": "tab-link2"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "link2_image",
+        "label": "Image 2",
+        "description": "Recommended asset type SVG.",
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
+        "valueType": "string"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "link2_imageMimeType"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link2_link",
+        "value": "",
+        "label": "Link 2"
+      },
+      {
+        "component": "text",
+        "name": "link2_imageAlt",
+        "label": "Alternative Text for Accessibility 2",
+        "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
+        "valueType": "string"
       }
     ]
   },
@@ -161,21 +480,259 @@
     ]
   },
   {
-    "id": "columns",
+    "id": "cta-link",
     "fields": [
       {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
+        "component": "tab",
+        "label": "Properties",
+        "name": "properties"
+      },
+      {
+        "component": "multiselect",
+        "name": "styles",
+        "label": "Style Options",
+        "valueType": "string",
+        "description": "Please hit the x to make both CTA's secondary",
+        "options": [
+          {
+            "name": "First CTA Primary",
+            "value": "first-cta-primary"
+          },
+          {
+            "name": "Link Visual Width",
+            "children": [
+              {
+                "name": "Fill Container",
+                "value": "fill-container"
+              },
+              {
+                "name": "Hug Content",
+                "value": "hug-content"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "tab",
+        "label": "Primary",
+        "name": "primaryCta"
       },
       {
         "component": "text",
-        "valueType": "number",
-        "name": "rows",
+        "valueType": "string",
+        "name": "link1_ctaText",
+        "label": "Link Label",
         "value": "",
-        "label": "Rows"
+        "required": true
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link1_cta",
+        "label": "Link",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link1AriaLabel",
+        "label": "Aria Label",
+        "value": "",
+        "description": "Please refer to authoring guidelines before usage"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link1QueryParamKey",
+        "label": "Query Param Key",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link1QueryParamValue",
+        "label": "Query Param Value",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link1CampaignCode",
+        "label": "Campaign Code",
+        "value": "",
+        "valueFormat": "regexp",
+        "description": "Use only for marketing campaign tracking – letters, numbers and dashes permitted. Don’t use to track general or BAU content links",
+        "validation": {
+          "regExp": "^[a-zA-Z0-9-]+$",
+          "customErrorMsg": "Only (a-z), (A-Z), (0-9), and (-) is allowed in this field"
+        }
+      },
+      {
+        "component": "tab",
+        "label": "Secondary",
+        "name": "secondaryCta"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link2_ctaText",
+        "label": "Link Label",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link2_cta",
+        "label": "Link",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link2AriaLabel",
+        "label": "Aria Label",
+        "value": "",
+        "description": "Please refer to authoring guidelines before usage"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link2QueryParamKey",
+        "label": "Query Param Key",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link2QueryParamValue",
+        "label": "Query Param Value",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link2CampaignCode",
+        "label": "Campaign Code",
+        "value": "",
+        "valueFormat": "regexp",
+        "description": "Use only for marketing campaign tracking – letters, numbers and dashes permitted. Don’t use to track general or BAU content links",
+        "validation": {
+          "regExp": "^[a-zA-Z0-9-]+$",
+          "customErrorMsg": "Only (a-z), (A-Z), (0-9), and (-) is allowed in this field"
+        }
+      }
+    ]
+  },
+  {
+    "id": "disclaimer",
+    "fields": [
+      {
+        "component": "text",
+        "name": "heading",
+        "label": "Title",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "name": "headingType",
+        "value": "h2",
+        "label": "Title Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "disclaimer-item",
+    "fields": [
+      {
+        "component": "select",
+        "name": "type",
+        "label": "Disclaimer Type",
+        "valueType": "string",
+        "value": "manual",
+        "options": [
+          {
+            "name": "Manual",
+            "value": "manual"
+          },
+          {
+            "name": "Generic",
+            "value": "generic"
+          }
+        ],
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "id",
+        "label": "Id",
+        "valueType": "string",
+        "value": "",
+        "condition": {
+          "===": [
+            {
+              "var": "type"
+            },
+            "manual"
+          ]
+        },
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "footer-section",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
+        "component": "boolean",
+        "label": "Navigation Menu",
+        "name": "isNavigation",
+        "valueType": "boolean"
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "navigation-title",
+        "label": "Navigation Title",
+        "value": "",
+        "condition": {
+          "===": [
+            {
+              "var": "isNavigation"
+            },
+            true
+          ]
+        }
       }
     ]
   },
@@ -190,28 +747,1934 @@
     ]
   },
   {
-    "id": "hero",
+    "id": "gallery-item",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "custom-asset-namespace:custom-asset",
         "name": "image",
         "label": "Image",
-        "multi": false
+        "required": true,
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
+        "valueType": "string"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "imageMimeType"
+      },
+      {
+        "component": "boolean",
+        "name": "isAlternativeText",
+        "valueType": "boolean",
+        "label": "Don't provide an alternative text",
+        "description": "Leave alt text empty for images that add no meaning or value. Marking them as decorative ensures assistive technologies ignore them.",
+        "value": ""
       },
       {
         "component": "text",
         "valueType": "string",
+        "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
         "name": "imageAlt",
-        "label": "Alt",
+        "value": "",
+        "label": "Alternative text for accessibility",
+        "condition": {
+          "===": [
+            {
+              "var": "isAlternativeText"
+            },
+            false
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "aspectRatio",
+        "value": "smart-crop-16-9",
+        "label": "Aspect Ratio",
+        "hidden": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "description": "Write concise, clear captions that provide meaningful context for users. It should complement, not duplicate, the alt text.",
+        "name": "caption",
+        "value": "",
+        "label": "Caption"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link",
+        "description": "Link, to a content page, external URL or page anchor"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "value": "",
+        "label": "Link Title",
+        "condition": {
+          "!!": {
+            "var": "link"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "header-section",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
+        "component": "boolean",
+        "label": "Navigation Menu",
+        "name": "isNavigation",
+        "valueType": "boolean"
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "navigation-title",
+        "label": "Navigation Title",
+        "value": "",
+        "condition": {
+          "===": [
+            {
+              "var": "isNavigation"
+            },
+            true
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "help",
+    "fields": [
+      {
+        "component": "custom-icon-picker",
+        "name": "iconPicker",
+        "label": "Help Icon",
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "helpLabel",
+        "label": "Help Label",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "helpUrl",
+        "label": "Help URL",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "hero",
+    "fields": [
+      {
+        "component": "tab",
+        "label": "Asset",
+        "name": "asset"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "imagePicker",
+        "label": "Image",
+        "description": "Select an Image",
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
+        "valueType": "string"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "imagePickerMimeType"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imagePickerAlt",
+        "label": "Alternative text for image",
+        "condition": {
+          "===": [
+            {
+              "var": "imagePickerAltHide"
+            },
+            false
+          ]
+        },
+        "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
+        "value": ""
+      },
+      {
+        "component": "boolean",
+        "label": "Don't provide alternative text",
+        "name": "imagePickerAltHide",
+        "valueType": "boolean",
+        "description": "Leave alt text empty for images that add no meaning or value. Marking them as decorative ensures assistive technologies ignore them."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageCaption",
+        "label": "Image Location/Caption",
+        "description": "If required for image location, credits and image disclaimer.",
+        "value": ""
+      },
+      {
+        "component": "checkbox-group",
+        "label": "",
+        "name": "classes",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Hide image in mobile view",
+            "value": "hide-image-mobile"
+          }
+        ]
+      },
+      {
+        "component": "tab",
+        "label": "Text",
+        "name": "text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Title",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "headingType",
+        "label": "Type",
+        "value": "h1",
+        "hidden": true
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "introText",
+        "label": "Intro Text",
+        "description": "Maximum 3 lines of intro copy (desktop).",
+        "value": ""
+      },
+      {
+        "component": "tab",
+        "label": "Logo",
+        "name": "logo"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "logoPicker",
+        "label": "Logo Picker",
+        "description": "Select a Logo",
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
+        "valueType": "string"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "logoPickerMimeType"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "logoPickerAlt",
+        "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
+        "label": "Alternative text for logo",
+        "condition": {
+          "===": [
+            {
+              "var": "logoAltHide"
+            },
+            false
+          ]
+        },
+        "value": ""
+      },
+      {
+        "component": "boolean",
+        "label": "Don't provide alternative text",
+        "name": "logoAltHide",
+        "description": "Leave alt text empty for images that add no meaning or value. Marking them as decorative ensures assistive technologies ignore them.",
+        "valueType": "boolean"
+      }
+    ]
+  },
+  {
+    "id": "icon-and-text-container",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "layout-1-col",
+        "label": "Layout",
+        "options": [
+          {
+            "name": "1 Column",
+            "value": "layout-1-col"
+          },
+          {
+            "name": "2 Columns",
+            "value": "layout-2-col"
+          },
+          {
+            "name": "3 Columns",
+            "value": "layout-3-col"
+          },
+          {
+            "name": "4 Columns",
+            "value": "layout-4-col"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "alignment",
+        "value": "top-aligned",
+        "label": "Icon Alignment",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left-aligned"
+          },
+          {
+            "name": "Top",
+            "value": "top-aligned"
+          }
+        ],
+        "condition": {
+          "or": [
+            {
+              "===": [
+                {
+                  "var": "classes"
+                },
+                "layout-1-col"
+              ]
+            },
+            {
+              "===": [
+                {
+                  "var": "classes"
+                },
+                "layout-2-col"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "icon-and-text",
+    "fields": [
+      {
+        "component": "tab",
+        "label": "Asset",
+        "name": "tab-asset"
+      },
+      {
+        "component": "custom-icon-picker",
+        "name": "iconPicker",
+        "label": "Icon",
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "iconAltText",
+        "label": "Alternative text for accessibility",
+        "condition": {
+          "===": [
+            {
+              "var": "iconAltTextHide"
+            },
+            false
+          ]
+        },
+        "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
+        "value": ""
+      },
+      {
+        "component": "boolean",
+        "label": "Don't provide an alternative text",
+        "name": "iconAltTextHide",
+        "description": "Leave alt text empty for images that add no meaning or value. Marking them as decorative ensures assistive technologies ignore them.",
+        "value": true
+      },
+      {
+        "component": "tab",
+        "label": "Text",
+        "name": "tab-text"
+      },
+      {
+        "component": "text",
+        "name": "item_heading",
+        "label": "Title",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "name": "item_headingType",
+        "value": "h3",
+        "label": "Heading Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "item_description",
+        "label": "Text",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "tab",
+        "label": "Links",
+        "name": "tab-links"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "item_cta1",
+        "label": "Link 1",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "item_cta1Text",
+        "label": "CTA Text 1",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "item_cta2",
+        "label": "Link 2",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "item_cta2Text",
+        "label": "CTA Text 2",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "image-and-text-container",
+    "fields": [
+      {
+        "component": "select",
+        "name": "columns",
+        "value": "layout-1-col",
+        "label": "Columns",
+        "options": [
+          {
+            "name": "1 Column",
+            "value": "layout-1-col"
+          },
+          {
+            "name": "2 Columns",
+            "value": "layout-2-col"
+          },
+          {
+            "name": "3 Columns",
+            "value": "layout-3-col"
+          },
+          {
+            "name": "4 Columns",
+            "value": "layout-4-col"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "imageAlignment",
+        "value": "all-left-aligned",
+        "label": "Image Alignment",
+        "condition": {
+          "===": [
+            {
+              "var": "columns"
+            },
+            "layout-1-col"
+          ]
+        },
+        "options": [
+          {
+            "name": "All Left Aligned",
+            "value": "all-left-aligned"
+          },
+          {
+            "name": "All Right Aligned",
+            "value": "all-right-aligned"
+          },
+          {
+            "name": "Alternate Left Aligned",
+            "value": "alternate-left-aligned"
+          },
+          {
+            "name": "Alternate Right Aligned",
+            "value": "alternate-right-aligned"
+          }
+        ]
+      },
+      {
+        "component": "checkbox-group",
+        "name": "checkboxFirstArticleHighlighted",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Highlights first article",
+            "value": "first-article-highlighted"
+          }
+        ],
+        "condition": {
+          "===": [
+            {
+              "var": "columns"
+            },
+            "layout-1-col"
+          ]
+        }
+      },
+      {
+        "component": "checkbox-group",
+        "name": "checkboxDisableImageCurve",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Disable Image Curve",
+            "value": "image-curve-disabled"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "image-and-text",
+    "fields": [
+      {
+        "component": "tab",
+        "label": "Asset",
+        "name": "tab-asset"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "imagePicker",
+        "label": "Image",
+        "description": "Select an Image",
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
+        "required": true
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "imagePickerMimeType"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imagePickerAlt",
+        "label": "Alternative text for accessibility",
+        "condition": {
+          "===": [
+            {
+              "var": "imagePickerAltHide"
+            },
+            false
+          ]
+        },
+        "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
+        "value": ""
+      },
+      {
+        "component": "boolean",
+        "label": "Don't provide an alternative text",
+        "name": "imagePickerAltHide",
+        "description": "Leave alt text empty for images that add no meaning or value. Marking them as decorative ensures assistive technologies ignore them."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageCaption",
+        "label": "Image Caption",
+        "description": "Write concise, clear captions that provide meaningful context for users. It should complement, not duplicate, the alt text.",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "ribbonText",
+        "label": "Ribbon Text",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "tab",
+        "label": "Text",
+        "name": "tab-text"
+      },
+      {
+        "component": "text",
+        "name": "category",
+        "label": "Category",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "heading",
+        "label": "Title",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "name": "headingType",
+        "value": "h3",
+        "label": "Heading Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "introText",
+        "label": "Intro Text",
+        "valueType": "string",
+        "description": "Only use with primary style.",
         "value": ""
       },
       {
         "component": "richtext",
-        "name": "text",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "tab",
+        "label": "Link",
+        "name": "tab-link"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "item_cta1",
+        "label": "Link 1",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "item_cta1Text",
+        "label": "CTA Text 1",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "item_cta2",
+        "label": "Link 2",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "item_cta2Text",
+        "label": "CTA Text 2",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "item_cta3",
+        "label": "Link 3",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "item_cta3Text",
+        "label": "CTA Text 3",
+        "value": ""
+      },
+      {
+        "component": "tab",
+        "label": "Campaign Config",
+        "name": "tab-campaignConfig"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "campaignCode",
+        "label": "Campaign Code",
         "value": "",
-        "label": "Text",
+        "valueFormat": "regexp",
+        "description": "Use only for marketing campaign tracking – letters, numbers and dashes permitted. Don’t use to track general or BAU content links",
+        "validation": {
+          "regExp": "^[a-zA-Z0-9-]+$",
+          "customErrorMsg": "Only (a-z), (A-Z), (0-9), and (-) is allowed in this field"
+        }
+      }
+    ]
+  },
+  {
+    "id": "image",
+    "fields": [
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "image",
+        "label": "Image",
+        "required": true,
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
         "valueType": "string"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "imageMimeType"
+      },
+      {
+        "component": "boolean",
+        "name": "isAlternativeText",
+        "valueType": "boolean",
+        "label": "Don't provide an alternative text",
+        "description": "Leave alt text empty for images that add no meaning or value. Marking them as decorative ensures assistive technologies ignore them.",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
+        "name": "imageAlt",
+        "value": "",
+        "label": "Alternative text for accessibility",
+        "condition": {
+          "===": [
+            {
+              "var": "isAlternativeText"
+            },
+            false
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "description": "Applies to single image (not gallery).",
+        "name": "aspectRatio",
+        "value": "",
+        "label": "Aspect Ratio",
+        "required": true,
+        "options": [
+          {
+            "name": "16:9",
+            "value": "smart-crop-16-9"
+          },
+          {
+            "name": "3:2",
+            "value": "smart-crop-3-2"
+          },
+          {
+            "name": "5:4",
+            "value": "smart-crop-5-4"
+          },
+          {
+            "name": "1:1",
+            "value": "smart-crop-1-1"
+          },
+          {
+            "name": "4:5",
+            "value": "smart-crop-4-5"
+          },
+          {
+            "name": "Original",
+            "value": "original"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "description": "Write concise, clear captions that provide meaningful context for users. It should complement, not duplicate, the alt text.",
+        "name": "caption",
+        "value": "",
+        "label": "Caption"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link",
+        "description": "Link, to a content page, external URL or page anchor"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "value": "",
+        "label": "Link Text",
+        "condition": {
+          "!!": {
+            "var": "link"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "in-page-alert",
+    "fields": [
+      {
+        "component": "select",
+        "name": "alertType",
+        "label": "Alert Type",
+        "required": false,
+        "value": "information",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Information",
+            "value": "information"
+          },
+          {
+            "name": "Alert",
+            "value": "alert"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "alertText",
+        "label": "Rich Text Editor",
+        "required": false,
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "captionText",
+        "label": "Caption",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "link-list",
+    "fields": [
+      {
+        "component": "text",
+        "name": "heading",
+        "label": "Heading",
+        "required": true,
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "headingType",
+        "label": "Heading Level",
+        "required": true,
+        "value": "",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "buildListUsingType",
+        "label": "Build List Using",
+        "required": true,
+        "value": "",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Child Pages",
+            "value": "childPages"
+          },
+          {
+            "name": "Fixed List",
+            "value": "fixedList"
+          }
+        ]
+      },
+      {
+        "component": "aem-content",
+        "name": "childPagesParentPage",
+        "value": "",
+        "label": "Parent Page",
+        "description": "Leave empty to use current page. Max depth 1 level",
+        "valueType": "string",
+        "validation": {
+          "rootPath": "/content/qcom"
+        },
+        "condition": {
+          "===": [
+            {
+              "var": "buildListUsingType"
+            },
+            "childPages"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "childPagesOrderBy",
+        "label": "Order by",
+        "required": true,
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Title",
+            "value": "jcr:title"
+          },
+          {
+            "name": "AEM Page Path",
+            "value": "pagePath"
+          }
+        ],
+        "condition": {
+          "===": [
+            {
+              "var": "buildListUsingType"
+            },
+            "childPages"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "childPagesSortOrder",
+        "label": "Sort Order",
+        "required": true,
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Ascending",
+            "value": "ascending"
+          },
+          {
+            "name": "Descending",
+            "value": "descending"
+          }
+        ],
+        "condition": {
+          "===": [
+            {
+              "var": "buildListUsingType"
+            },
+            "childPages"
+          ]
+        }
+      },
+      {
+        "component": "aem-content",
+        "name": "childPagesExcludeUrl",
+        "value": "",
+        "label": "Exclude Pages",
+        "description": "Click 'Add' and select pages to exclude from the list",
+        "valueType": "string[]",
+        "multi": true,
+        "validation": {
+          "rootPath": "/content/qcom"
+        },
+        "condition": {
+          "===": [
+            {
+              "var": "buildListUsingType"
+            },
+            "childPages"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Style",
+        "value": "hyper-links",
+        "valueType": "string",
+        "required": true,
+        "options": [
+          {
+            "name": "Hyperlinks",
+            "value": "hyper-links"
+          },
+          {
+            "name": "Simple Links (For Region Selection)",
+            "value": "simple-links"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "link",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "URL",
+        "valueType": "string",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "CTA Text",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "login",
+    "fields": [
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "includeBusinessRewardsLogin",
+        "label": "Include Business Rewards Login"
+      },
+      {
+        "component": "aem-content",
+        "name": "loginLoadingPageUrl",
+        "label": "Login Loading Page Url"
+      },
+      {
+        "component": "aem-content",
+        "name": "businessRewardsLinkNewAccountUrl",
+        "label": "QBR Connect Page Url"
+      }
+    ]
+  },
+  {
+    "id": "logo-and-text-container",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "layout-1-col",
+        "label": "Layout",
+        "required": true,
+        "options": [
+          {
+            "name": "1 Column",
+            "value": "layout-1-col"
+          },
+          {
+            "name": "2 Columns",
+            "value": "layout-2-col"
+          },
+          {
+            "name": "3 Columns",
+            "value": "layout-3-col"
+          },
+          {
+            "name": "4 Columns",
+            "value": "layout-4-col"
+          },
+          {
+            "name": "4 Columns Center",
+            "value": "layout-4-col-center"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "logo-and-text",
+    "fields": [
+      {
+        "component": "tab",
+        "label": "Asset",
+        "name": "tab-asset"
+      },
+      {
+        "component": "custom-icon-picker",
+        "valueType": "string",
+        "name": "iconPicker",
+        "label": "Logo",
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "iconAltText",
+        "label": "Alternative text for accessibility",
+        "condition": {
+          "===": [
+            {
+              "var": "iconAltTextHide"
+            },
+            false
+          ]
+        },
+        "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
+        "value": ""
+      },
+      {
+        "component": "boolean",
+        "label": "Don't provide an alternative text",
+        "name": "iconAltTextHide",
+        "description": "Leave alt text empty for images that add no meaning or value. Marking them as decorative ensures assistive technologies ignore them."
+      },
+      {
+        "component": "tab",
+        "label": "Text",
+        "name": "tab-text"
+      },
+      {
+        "component": "text",
+        "name": "item_heading",
+        "label": "Title",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "name": "item_headingType",
+        "value": "h3",
+        "label": "Heading Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "item_description",
+        "label": "Description",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "tab",
+        "label": "Link",
+        "name": "tab-link"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "item_link1",
+        "label": "CTA 1 Link",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "item_link1Text",
+        "label": "CTA 1 Text",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "item_link2",
+        "label": "CTA 2 Link",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "item_link2Text",
+        "label": "CTA 2 Text",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "logo",
+    "fields": [
+      {
+        "component": "custom-icon-picker",
+        "name": "iconPicker",
+        "label": "Logo Image Asset",
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "logo_linkText",
+        "value": "",
+        "label": "Logo Alt Text",
+        "required": true
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "logo_link",
+        "value": "",
+        "label": "Logo link",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "menu",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Style",
+        "description": "Style the navigation list",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Shortcuts",
+            "value": "shortcuts"
+          },
+          {
+            "name": "Icon only",
+            "value": "icon"
+          },
+          {
+            "name": "Horizontal",
+            "value": "horizontal"
+          }
+        ]
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "menu-item",
+    "fields": [
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "label": "URL",
+        "value": ""
+      },
+      {
+        "component": "custom-icon-picker",
+        "name": "icon",
+        "label": "Icon",
+        "placeholder": "placeholder",
+        "configUrl": "/content/dam/image.config.json",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "region-selector",
+    "fields": [
+      {
+        "component": "checkbox-group",
+        "label": "",
+        "name": "classes",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Hide Region selector",
+            "value": "hide-region-selector"
+          }
+        ]
+      },
+      {
+        "component": "aem-content",
+        "name": "regionSelectorUrl",
+        "value": "",
+        "label": "Region Selector URL",
+        "valueType": "string",
+        "validation": {
+          "rootPath": "/content/qcom"
+        }
+      }
+    ]
+  },
+  {
+    "id": "shopping-cart-widget",
+    "fields": [
+      {
+        "component": "checkbox-group",
+        "label": "",
+        "name": "classes",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Hide Shopping Cart",
+            "value": "hide-shopping-cart"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "table",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "value": "",
+        "label": "Styles",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Styles",
+            "children": [
+              {
+                "name": "Zebra",
+                "value": "striped"
+              }
+            ]
+          },
+          {
+            "name": "Table Header",
+            "children": [
+              {
+                "name": "First Row",
+                "value": "header-first-row"
+              },
+              {
+                "name": "First Column",
+                "value": "header-first-column"
+              },
+              {
+                "name": "Second Row",
+                "value": "header-second-row"
+              },
+              {
+                "name": "Second Column",
+                "value": "header-second-column"
+              }
+            ]
+          },
+          {
+            "name": "Freeze",
+            "children": [
+              {
+                "name": "Header Column",
+                "value": "freeze-header-column"
+              },
+              {
+                "name": "Header Row",
+                "value": "freeze-header-row"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "filter",
+        "label": "Columns",
+        "valueType": "string",
+        "value": "table",
+        "options": [
+          {
+            "name": "1 Column",
+            "value": "table"
+          },
+          {
+            "name": "2 Columns",
+            "value": "table-2-columns"
+          },
+          {
+            "name": "3 Columns",
+            "value": "table-3-columns"
+          },
+          {
+            "name": "4 Columns",
+            "value": "table-4-columns"
+          },
+          {
+            "name": "5 Columns",
+            "value": "table-5-columns"
+          },
+          {
+            "name": "6 Columns",
+            "value": "table-6-columns"
+          },
+          {
+            "name": "7 Columns",
+            "value": "table-7-columns"
+          },
+          {
+            "name": "8 Columns",
+            "value": "table-8-columns"
+          },
+          {
+            "name": "9 Columns",
+            "value": "table-9-columns"
+          },
+          {
+            "name": "10 Columns",
+            "value": "table-10-columns"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "caption_text",
+        "label": "Caption",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "boolean",
+        "name": "caption_show",
+        "label": "Show Caption",
+        "valueType": "boolean"
+      },
+      {
+        "component": "text",
+        "name": "altTextTicks",
+        "label": "Accessible text for ticks",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "altTextCrosses",
+        "label": "Accessible text for crosses",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "altTextHyphens",
+        "label": "Accessible text for Hyphen/Not applicable",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "table-row",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column1text",
+        "label": "Column 1"
+      }
+    ]
+  },
+  {
+    "id": "table-col-2",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column1text",
+        "label": "Column 1"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column2text",
+        "label": "Column 2"
+      }
+    ]
+  },
+  {
+    "id": "table-col-3",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column1text",
+        "label": "Column 1"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column2text",
+        "label": "Column 2"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column3text",
+        "label": "Column 3"
+      }
+    ]
+  },
+  {
+    "id": "table-col-4",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column1text",
+        "label": "Column 1"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column2text",
+        "label": "Column 2"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column3text",
+        "label": "Column 3"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column4text",
+        "label": "Column 4"
+      }
+    ]
+  },
+  {
+    "id": "table-col-5",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column1text",
+        "label": "Column 1"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column2text",
+        "label": "Column 2"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column3text",
+        "label": "Column 3"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column4text",
+        "label": "Column 4"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column5text",
+        "label": "Column 5"
+      }
+    ]
+  },
+  {
+    "id": "table-col-6",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column1text",
+        "label": "Column 1"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column2text",
+        "label": "Column 2"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column3text",
+        "label": "Column 3"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column4text",
+        "label": "Column 4"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column5text",
+        "label": "Column 5"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column6text",
+        "label": "Column 6"
+      }
+    ]
+  },
+  {
+    "id": "table-col-7",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column1text",
+        "label": "Column 1"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column2text",
+        "label": "Column 2"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column3text",
+        "label": "Column 3"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column4text",
+        "label": "Column 4"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column5text",
+        "label": "Column 5"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column6text",
+        "label": "Column 6"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column7text",
+        "label": "Column 7"
+      }
+    ]
+  },
+  {
+    "id": "table-col-8",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column1text",
+        "label": "Column 1"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column2text",
+        "label": "Column 2"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column3text",
+        "label": "Column 3"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column4text",
+        "label": "Column 4"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column5text",
+        "label": "Column 5"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column6text",
+        "label": "Column 6"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column7text",
+        "label": "Column 7"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column8text",
+        "label": "Column 8"
+      }
+    ]
+  },
+  {
+    "id": "table-col-9",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column1text",
+        "label": "Column 1"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column2text",
+        "label": "Column 2"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column3text",
+        "label": "Column 3"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column4text",
+        "label": "Column 4"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column5text",
+        "label": "Column 5"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column6text",
+        "label": "Column 6"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column7text",
+        "label": "Column 7"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column8text",
+        "label": "Column 8"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column9text",
+        "label": "Column 9"
+      }
+    ]
+  },
+  {
+    "id": "table-col-10",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column1text",
+        "label": "Column 1"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column2text",
+        "label": "Column 2"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column3text",
+        "label": "Column 3"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column4text",
+        "label": "Column 4"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column5text",
+        "label": "Column 5"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column6text",
+        "label": "Column 6"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column7text",
+        "label": "Column 7"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column8text",
+        "label": "Column 8"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column9text",
+        "label": "Column 9"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column10text",
+        "label": "Column 10"
+      }
+    ]
+  },
+  {
+    "id": "video-player",
+    "fields": [
+      {
+        "component": "select",
+        "name": "channelName",
+        "label": "Channel",
+        "value": "",
+        "valueType": "string",
+        "required": true,
+        "options": [
+          {
+            "name": "Youtube",
+            "value": "youtube"
+          },
+          {
+            "name": "Youku",
+            "value": "youku"
+          },
+          {
+            "name": "Vimeo",
+            "value": "vimeo"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "videoId",
+        "label": "Video ID",
+        "description": "ID of the [Youtube/ Youku/ Vimeo] Video to embed.",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "videoCaption",
+        "label": "Caption",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Size",
+        "value": "",
+        "valueType": "string",
+        "required": true,
+        "options": [
+          {
+            "name": "Large",
+            "value": "large"
+          },
+          {
+            "name": "Medium",
+            "value": "medium"
+          }
+        ]
       }
     ]
   }

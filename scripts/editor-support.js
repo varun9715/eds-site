@@ -1,15 +1,18 @@
+import buildNavList from '../blocks/in-page-nav/build-inpage-navlinks.js';
 import {
   decorateBlock,
   decorateBlocks,
-  decorateButtons,
   decorateIcons,
   decorateSections,
   loadBlock,
-  loadScript,
   loadSections,
 } from './aem.js';
 import { decorateRichtext } from './editor-support-rte.js';
-import { decorateMain } from './scripts.js';
+import { decorateMain, decorateAnchorSections } from './scripts.js';
+
+// set aem content root
+window.hlx.aemRoot = '/content/qcom';
+window.hlx.runmode = 'author';
 
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
@@ -24,11 +27,7 @@ async function applyChanges(event) {
   const { content } = updates[0];
   if (!content) return false;
 
-  // load dompurify
-  await loadScript(`${window.hlx.codeBasePath}/scripts/dompurify.min.js`);
-
-  const sanitizedContent = window.DOMPurify.sanitize(content, { USE_PROFILES: { html: true } });
-  const parsedUpdate = new DOMParser().parseFromString(sanitizedContent, 'text/html');
+  const parsedUpdate = new DOMParser().parseFromString(content, 'text/html');
   const element = document.querySelector(`[data-aue-resource="${resource}"]`);
 
   if (element) {
@@ -53,7 +52,6 @@ async function applyChanges(event) {
       if (newBlock) {
         newBlock.style.display = 'none';
         block.insertAdjacentElement('afterend', newBlock);
-        decorateButtons(newBlock);
         decorateIcons(newBlock);
         decorateBlock(newBlock);
         decorateRichtext(newBlock);
@@ -71,17 +69,17 @@ async function applyChanges(event) {
           const [newSection] = newElements;
           newSection.style.display = 'none';
           element.insertAdjacentElement('afterend', newSection);
-          decorateButtons(newSection);
           decorateIcons(newSection);
           decorateRichtext(newSection);
           decorateSections(parentElement);
           decorateBlocks(parentElement);
+          await decorateAnchorSections(parentElement);
           await loadSections(parentElement);
           element.remove();
+          buildNavList();// import to call this here after the eztra section has been removed
           newSection.style.display = null;
         } else {
           element.replaceWith(...newElements);
-          decorateButtons(parentElement);
           decorateIcons(parentElement);
           decorateRichtext(parentElement);
         }

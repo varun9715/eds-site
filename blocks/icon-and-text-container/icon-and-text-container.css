@@ -1,0 +1,103 @@
+.icon-and-text-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-alias-responsive-300-to-1200) var(--body-gutter);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Block item */
+.icon-and-text {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  gap: var(--spacing-alias-responsive-300-to-1200);
+}
+
+.icontext-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-alias-responsive-200-to-600);
+}
+
+.icontext-content-container > * {
+  margin: 0;
+}
+
+/* Icon container */
+.icontext-icon-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-alias-responsive-200-to-600);
+}
+
+.icontext-icon-container img {
+  width: var(--sizing-alias-fixed-900);
+  height: var(--sizing-alias-fixed-900);
+}
+
+/* CTA links */
+.icontext-links-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.icontext-links-container a {
+  display: inline-flex;
+  text-decoration: none;
+  width: fit-content;
+  align-items: center;
+  gap: var(--spacing-alias-fixed-50);
+  padding: var(--spacing-alias-fixed-100) 0;
+  margin-bottom: 0;
+}
+
+.icontext-links-container a::after {
+  content: '';
+  flex-shrink: 0;
+  display: inline-block;
+  width: var(--sizing-alias-icon-frame-sm);
+  height: var(--sizing-alias-icon-frame-sm);
+  background-color: currentColor;
+  mask: url('../../icons/runway_icon_arrow_right.svg') no-repeat center / contain;
+}
+
+.icon-and-text-container.layout-1-col .icon-and-text.left-aligned,
+.icon-and-text-container.layout-2-col .icon-and-text.left-aligned {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.icon-and-text-container.layout-1-col .icon-and-text.top-aligned,
+.icon-and-text-container.layout-2-col .icon-and-text.top-aligned {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Grid Columns */
+@media (min-width: 36rem) {
+  .icon-and-text-container.layout-2-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .icon-and-text-container.layout-3-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .icon-and-text-container.layout-4-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .icon-and-text {
+    gap: var(--spacing-alias-responsive-200-to-600);
+  }
+}
+
+@media (min-width: 64rem) {
+  .icon-and-text-container.layout-4-col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "fields": [
+    {
+      "component": "custom-asset-namespace:custom-asset",
+      "name": "imagePicker",
+      "label": "Image",
+      "description": "Select an Image",
+      "placeholder": "placeholder",
+      "configUrl": "/content/dam/image.config.json",
+      "required": true
+    },
+    {
+      "component": "custom-asset-namespace:custom-asset-mimetype",
+      "valueType": "string",
+      "name": "imagePickerMimeType"
+    },
+    {
+      "component": "text",
+      "valueType": "string",
+      "name": "imagePickerAlt",
+      "label": "Alternative text for accessibility",
+      "condition": { "===": [{ "var": "imagePickerAltHide" }, false] },
+      "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
+      "value": ""
+    },
+    {
+      "component": "boolean",
+      "label": "Don't provide an alternative text",
+      "name": "imagePickerAltHide",
+      "description": "Leave alt text empty for images that add no meaning or value. Marking them as decorative ensures assistive technologies ignore them."
+    },
+    {
+      "component": "text",
+      "valueType": "string",
+      "name": "imageCaption",
+      "label": "Image Caption",
+      "description": "Write concise, clear captions that provide meaningful context for users. It should complement, not duplicate, the alt text.",
+      "value": ""
+    }
+  ]
+}

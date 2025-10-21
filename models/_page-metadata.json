@@ -1,0 +1,35 @@
+{
+  "id": "page-metadata",
+  "fields": [
+    {
+      "component": "tab",
+      "label": "General",
+      "name": "general"
+    },
+    {
+      "component": "text-input",
+      "name": "jcr:title",
+      "label": "Title",
+      "required": true,
+      "description": "Defines the the page meta title for SEO, as well as a title displayable in the page content (unless and overriding 'Page Title' below is defined)."
+    },
+    {
+      "component": "text-input",
+      "name": "pageTitle",
+      "label": "Page Title",
+      "description": "Defines a page title that is displayable in the page content, instead of the 'Title'"
+    },
+    {
+      "component": "boolean",
+      "label": "Hide Breadcrumb Component In Page",
+      "name": "hidebreadcrumb",
+      "valueType": "boolean"
+    },
+    {
+      "component": "boolean",
+      "label": "Hide In Navigation",
+      "name": "hideinnavigation",
+      "valueType": "boolean"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+@import url('../image/image.css');
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery .carousel-slides-container {
+  position: relative;
+}
+
+.gallery .carousel-slides {
+  display: flex;
+  margin-bottom: -4px;
+  padding-bottom: 4px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+}
+
+.gallery .carousel-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery .carousel-slide {
+  position: relative;
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+.gallery .carousel-slides picture {
+  background-color: var(--color-base-neutral-05);
+  border-radius: var(--border-radius-base-1-0);
+}
+
+.gallery .carousel-slide .carousel-slide-image picture > img {
+  width: auto;
+  max-height: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery .carousel-navigation-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: var(--spacing-alias-fixed-200);
+  margin-top: var(--spacing-alias-fixed-200);
+}
+
+.gallery .hasCaption .carousel-navigation-buttons {
+  margin-top: var(--spacing-alias-fixed-400);
+}
+
+.gallery .slide-counter {
+  min-width: 2.18rem;
+  margin: 0;
+  font-weight: 500;
+  text-align: center;
+}
+
+.gallery .carousel-navigation-buttons button {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background-color: transparent;
+  border: 2px solid var(--color-comp-web-button-secondary-muted-enabled-border);
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  pointer-events: auto;
+}
+
+.gallery .carousel-navigation-buttons button:hover {
+  color: var(--color-comp-web-button-secondary-muted-hover-icon);
+  border-color: var(--color-comp-web-button-secondary-muted-hover-border);
+  background: var(--color-comp-web-button-secondary-muted-hover-background);
+}
+
+.gallery .carousel-navigation-buttons button:focus {
+  outline: none;
+}
+
+.gallery .carousel-navigation-buttons button:focus-visible {
+  outline: 3px solid var(--color-alias-interactive-focus-on-light);
+  outline-offset: 3px;
+}
+
+.gallery .carousel-navigation-buttons button:active {
+  color: var(--color-comp-web-button-secondary-muted-pressed-icon);
+  border-color: var(--color-comp-web-button-secondary-muted-pressed-border);
+  background: var(--color-comp-web-button-secondary-muted-pressed-background);
+  outline: none;
+  outline-offset: none;
+}
+
+.gallery .carousel-navigation-buttons button::after {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--color-comp-web-button-secondary-muted-enabled-border);
+  mask-image: url('../../icons/runway_icon_arrow_left.svg');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  vertical-align: middle;
+}
+
+.gallery .carousel-navigation-buttons button.slide-next::after {
+  mask-image: url('../../icons/runway_icon_arrow_right.svg');
+}

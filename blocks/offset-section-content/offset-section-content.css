@@ -1,0 +1,76 @@
+.section[data-type='offset-section'] {
+  --container-gap: var(--spacing-base-4-5);
+  --column-width: calc((100% - (11 * var(--spacing-alias-responsive-200-to-600))) / 12);
+
+  border-top-right-radius: var(--border-radius-base-8-0);
+  background-color: var(--color-alias-surface-background-primary);
+  padding: var(--spacing-alias-responsive-450-to-1800) var(--body-margin);
+}
+
+.section[data-type='offset-section'].background-grey {
+  background-color: var(--color-alias-surface-background-secondary);
+}
+
+.section.disable-curve[data-type='offset-section'].disable-curve {
+  border-top-right-radius: 0;
+}
+
+.section[data-type='offset-section'] .offset-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--container-gap);
+}
+
+.section[data-type='offset-section'] .offset-section-content {
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+}
+
+.section[data-type='offset-section'] .cta-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-comp-web-spacer-xl);
+  margin-bottom: 0;
+}
+
+.section[data-type='offset-section'] .cta-links-container a {
+  display: flex;
+  gap: var(--spacing-alias-fixed-50);
+  align-items: center;
+  width: fit-content;
+}
+
+.section[data-type='offset-section'] .cta-links-container a::after {
+  min-width: var(--sizing-alias-icon-frame-xs);
+  height: var(--sizing-alias-icon-frame-xs);
+  mask: url('../../icons/runway_icon_arrow_right.svg') no-repeat center;
+  background-color: currentColor;
+  content: '';
+}
+
+/* Breakpoint - screen md and above */
+@media (min-width: 36rem) {
+  .section[data-type='offset-section'] .offset-content-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    gap: var(--spacing-alias-responsive-200-to-600);
+  }
+
+  .offset-content-container > div:first-child {
+    width: calc(
+      (var(--column-width) * 5) + (var(--spacing-alias-responsive-200-to-600) * 4)
+    );
+  }
+
+  .offset-content-container > div:nth-child(2) {
+    width: calc(
+      (var(--column-width) * 7) + (var(--spacing-alias-responsive-200-to-600) * 6)
+    );
+  }
+
+  .section[data-type='offset-section'] .anchor-wrapper {
+    flex: 0 0 100%;
+  }
+}

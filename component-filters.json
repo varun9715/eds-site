@@ -2,20 +2,52 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "offset-section",
+      "header-section",
+      "footer-section",
+      "tab-section"
     ]
   },
   {
     "id": "section",
     "components": [
       "text",
-      "image",
-      "button",
       "title",
+      "footer",
+      "fragment",
+      "header",
+      "image",
+      "gallery",
       "hero",
-      "cards",
-      "columns",
-      "fragment"
+      "image-and-text-container",
+      "icon-and-text-container",
+      "link-list",
+      "logo-and-text-container",
+      "in-page-nav",
+      "video-player",
+      "in-page-alert",
+      "cta-link",
+      "app-download",
+      "table",
+      "disclaimer",
+      "accordion"
+    ]
+  },
+  {
+    "id": "offset-section",
+    "components": [
+      "text",
+      "title",
+      "icon-and-text-container",
+      "logo-and-text-container",
+      "accordion"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
     ]
   },
   {
@@ -25,18 +57,127 @@
     ]
   },
   {
-    "id": "columns",
+    "id": "disclaimer",
     "components": [
-      "column"
+      "disclaimer-item"
     ]
   },
   {
-    "id": "column",
+    "id": "footer-section",
     "components": [
+      "menu",
+      "logo",
       "text",
-      "image",
-      "button",
-      "title"
+      "richtextBlock"
+    ]
+  },
+  {
+    "id": "gallery",
+    "components": [
+      "gallery-item"
+    ]
+  },
+  {
+    "id": "header-section",
+    "components": [
+      "menu",
+      "logo",
+      "text",
+      "region-selector",
+      "help",
+      "richtextBlock",
+      "login",
+      "shopping-cart-widget"
+    ]
+  },
+  {
+    "id": "icon-and-text-container",
+    "components": [
+      "icon-and-text"
+    ]
+  },
+  {
+    "id": "image-and-text-container",
+    "components": [
+      "image-and-text"
+    ]
+  },
+  {
+    "id": "link-list",
+    "components": [
+      "link"
+    ]
+  },
+  {
+    "id": "logo-and-text-container",
+    "components": [
+      "logo-and-text"
+    ]
+  },
+  {
+    "id": "menu",
+    "components": [
+      "menu-item"
+    ]
+  },
+  {
+    "id": "table",
+    "components": [
+      "table-row"
+    ]
+  },
+  {
+    "id": "table-2-columns",
+    "components": [
+      "table-col-2"
+    ]
+  },
+  {
+    "id": "table-3-columns",
+    "components": [
+      "table-col-3"
+    ]
+  },
+  {
+    "id": "table-4-columns",
+    "components": [
+      "table-col-4"
+    ]
+  },
+  {
+    "id": "table-5-columns",
+    "components": [
+      "table-col-5"
+    ]
+  },
+  {
+    "id": "table-6-columns",
+    "components": [
+      "table-col-6"
+    ]
+  },
+  {
+    "id": "table-7-columns",
+    "components": [
+      "table-col-7"
+    ]
+  },
+  {
+    "id": "table-8-columns",
+    "components": [
+      "table-col-8"
+    ]
+  },
+  {
+    "id": "table-9-columns",
+    "components": [
+      "table-col-9"
+    ]
+  },
+  {
+    "id": "table-10-columns",
+    "components": [
+      "table-col-10"
     ]
   }
 ]

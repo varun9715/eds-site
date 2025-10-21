@@ -1,0 +1,152 @@
+{
+  "definitions": [
+    {
+      "title": "Offset Section",
+      "id": "offset-section",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "name": "Offset Section",
+              "model": "offset-section",
+              "filter": "offset-section",
+              "style": "background-grey",
+              "heading": "Headline",
+              "headingType": "h2",
+              "type": "offset-section"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "offset-section",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "General",
+          "name": "generalTab"
+        },
+        {
+          "component": "text",
+          "name": "name",
+          "label": "Section Name",
+          "description": "The label shown for this section in the Content Tree"
+        },
+        {
+          "component": "multiselect",
+          "name": "style",
+          "label": "Styles",
+          "value": "",
+          "options": [
+            {
+              "name": "Background colour",
+              "children": [
+                {
+                  "name": "Grey",
+                  "value": "background-grey"
+                }
+              ]
+            },
+            {
+              "name": "Curve",
+              "children": [
+                {
+                  "name": "Disable",
+                  "value": "disable-curve"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "component": "tab",
+          "label": "Offset Content",
+          "name": "contentTab"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "type",
+          "label": "Section Type",
+          "value": "offset-section",
+          "hidden": true
+        },
+        {
+          "component": "text",
+          "name": "heading",
+          "label": "Title",
+          "valueType": "string",
+          "value": "Headline",
+          "required": true
+        },
+        {
+          "component": "select",
+          "name": "headingType",
+          "label": "Heading Type",
+          "valueType": "string",
+          "value": "h2",
+          "required": true,
+          "options": [
+            { "name": "H2", "value": "h2" },
+            { "name": "H3", "value": "h3" },
+            { "name": "H4", "value": "h4" }
+          ]
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "text",
+          "label": "Text",
+          "value": ""
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "cta1",
+          "label": "Link 1",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "cta1Text",
+          "label": "CTA Text 1",
+          "value": ""
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "cta2",
+          "label": "Link 2",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "cta2Text",
+          "label": "CTA Text 2",
+          "value": ""
+        },
+        {
+          "...": "elements/_anchor-section-tab.json#/fields"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "offset-section",
+      "components": [
+        "text",
+        "title",
+        "icon-and-text-container",
+        "logo-and-text-container",
+        "accordion"
+      ]
+    }
+  ]
+}

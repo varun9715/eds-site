@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`decorate() > should match snapshot for author mode with 2 items 1`] = `"<div class="disclaimer-wrapper" data-nosnippet=""><div class="disclaimer-title"><h2 class="disclaimer-heading body-01">Important Information - Authored Title</h2></div><div class="disclaimer-container caption"><div class="disclaimer-item-content" id="disclaimer-mock-0"><p>Mock Disclaimer 0</p></div><div class="disclaimer-item-content" id="disclaimer-mock-1"><p>Mock Disclaimer 1</p></div></div></div>"`;

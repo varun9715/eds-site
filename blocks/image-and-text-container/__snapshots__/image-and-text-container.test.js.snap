@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Image and Text Block > should match the rendered snapshot 1`] = `
+"<div class="image-and-text-container layout-1-col all-left-aligned"><div class="image-text-wrapper"><div class="image-and-text image-left last-item">
+    <figure class="imagetext-image-container">
+      <div class="imagetext-badge"><span>Label</span></div>
+      <picture></picture>
+      <figcaption class="imagetext-caption caption">Enter caption / credit / location here</figcaption>
+    </figure>
+  
+    <div class="imagetext-content-container with-caption">
+      <div class="imagetext-heading-container">
+         <span class="imagetext-category caption">Category</span>
+        
+          <h3 id="enter-your-title-here" class="imagetext-title">Enter your title here</h3>
+        
+      </div>
+      <div data-testid="introText" class="imagetext-intro-text intro">Enter your intro text here</div>
+      <div data-testid="bodyText" class="imagetext-body-text body-01"><p>Enter your body text here</p></div>
+      <div class="imagetext-links-container body-01"><a href="https://qantas.com/link1" class="standalone" data-wae-event="block_card_click" data-wae-block-type="image_and_text" data-wae-card-title="Enter your title here" data-wae-internal-campaign-id="campaign_code">cta1Text</a><a href="https://qantas.com/link2" class="standalone" data-wae-event="block_card_click" data-wae-block-type="image_and_text" data-wae-card-title="Enter your title here" data-wae-internal-campaign-id="campaign_code">cta2Text</a><a href="https://qantas.com/link3" class="standalone" data-wae-event="block_card_click" data-wae-block-type="image_and_text" data-wae-card-title="Enter your title here" data-wae-internal-campaign-id="campaign_code">cta3Text</a></div>
+    </div>
+  </div></div></div>"
+`;

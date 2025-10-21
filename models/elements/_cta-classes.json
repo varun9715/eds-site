@@ -1,0 +1,41 @@
+{
+    "fields": [
+      {
+        "component": "select",
+        "name": "linkType",
+        "label": "Type",
+        "options": [
+          {
+            "name": "Layout",
+            "children": [
+            {
+              "name": "Default",
+              "value": "btn-default"
+            },
+            {
+              "name": "Wide",
+              "value": "btn--wide"
+            }
+          ]
+        },
+        {
+          "name": "Button",
+          "children": [
+            {
+              "name": "Primary",
+              "value": "btn-primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "btn-secondary"
+            },
+            {
+              "name": "Outline",
+              "value": "btn-tertiary"
+            }
+          ]
+        }
+      ]
+      }
+    ]
+  }

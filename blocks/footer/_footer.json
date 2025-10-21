@@ -1,0 +1,60 @@
+{
+  "definitions": [
+    {
+      "title": "Footer Section",
+      "id": "footer-section",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "name": "Footer Section",
+              "model": "footer-section",
+              "filter": "footer-section"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "footer-section",
+      "fields": [
+        {
+          "component": "text",
+          "name": "name",
+          "label": "Section Name",
+          "description": "The label shown for this section in the Content Tree"
+        },
+        {
+          "component": "boolean",
+          "label": "Navigation Menu",
+          "name": "isNavigation",
+          "valueType": "boolean"
+        },
+        {
+          "component": "text-input",
+          "valueType": "string",
+          "name": "navigation-title",
+          "label": "Navigation Title",
+          "value": "",
+          "condition": {
+            "===": [
+              {
+                "var": "isNavigation"
+              },
+              true
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "footer-section",
+      "components": ["menu", "logo", "text", "richtextBlock"]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "component": "text",
+  "valueType": "string",
+  "name": "campaignCode",
+  "label": "Campaign Code",
+  "value": "",
+  "valueFormat": "regexp",
+  "description": "Use only for marketing campaign tracking – letters, numbers and dashes permitted. Don’t use to track general or BAU content links",
+  "validation": {
+    "regExp": "^[a-zA-Z0-9-]+$",
+    "customErrorMsg": "Only (a-z), (A-Z), (0-9), and (-) is allowed in this field"
+  }
+}

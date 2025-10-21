@@ -1,11 +1,5 @@
 [
   {
-    "...": "./_page.json#/models"
-  },
-  {
-    "...": "./_image.json#/models"
-  },
-  {
     "...": "./_title.json#/models"
   },
   {
@@ -16,6 +10,12 @@
   },
   {
     "...": "./_section.json#/models"
+  },
+  {
+    "...": "./_offset-section.json#/models"
+  },
+  {
+    "...": "./_page-metadata.json#"
   },
   {
     "...": "../blocks/*/_*.json#/models"

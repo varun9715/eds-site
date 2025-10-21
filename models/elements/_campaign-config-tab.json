@@ -1,0 +1,12 @@
+{
+  "fields": [
+    {
+      "component": "tab",
+      "label": "Campaign Config",
+      "name": "tab-campaignConfig"
+    },
+    {
+      "...": "_campaign-config.json"
+    }
+  ]
+}

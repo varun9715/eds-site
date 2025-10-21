@@ -1,0 +1,110 @@
+:root {
+  --breadcrumb-top-margin: var(--spacing-alias-fixed-150);
+}
+
+.section.breadcrumbs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--body-margin);
+}
+
+.breadcrumbs {
+  max-width: var(--body-max-width);
+  width: 100%;
+  margin-top: var(--breadcrumb-top-margin);
+}
+
+.breadcrumb {
+  display: flex;
+  gap: var(--spacing-comp-web-spacer-xs);
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb > li {
+  display: flex;
+  gap: var(--spacing-comp-web-spacer-xs);
+  min-width: var(--line-height-base-web-44);
+  margin-bottom: 0;
+}
+
+/* chevron on the left of crumb entry */
+.breadcrumb > li + li::before {
+  width: var(--sizing-base-2-5);
+  height: var(--sizing-base-2-5);
+  display: inline-block;
+  background: url('../../icons/runway_icon_chevron_small_right.svg') no-repeat center;
+  background-size: var(--sizing-base-2-0);
+  content: '';
+  flex-shrink: 0;
+  padding: var(--spacing-comp-web-spacer-lg) 0;
+}
+
+/* do not shrink the first crumb */
+.breadcrumb > li:first-child {
+  flex-shrink: 0;
+}
+
+.breadcrumb > li:not(:first-child, :last-child) {
+  display: none;
+}
+
+.breadcrumb > li > span {
+  padding: var(--spacing-comp-web-spacer-lg) 0;
+}
+
+.breadcrumb > li > a {
+  padding: var(--spacing-comp-web-spacer-lg) 0;
+  color: var(--color-alias-interactive-muted-enabled-foreground);
+  height: fit-content;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.breadcrumb > li > a:focus,
+.breadcrumb > li > a:focus-visible,
+.breadcrumb > li > a:active {
+  color: var(--color-alias-interactive-muted-pressed-foreground);
+}
+
+.breadcrumb > li > a:hover,
+.breadcrumb > li > a:focus,
+.breadcrumb > li > a:focus-visible,
+.breadcrumb > li > a:active {
+  text-decoration: underline;
+}
+
+.breadcrumb > li.currentPage {
+  font-weight: 500;
+  color: var(--color-alias-text-primary);
+}
+
+/* Screen lg or above */
+@media (min-width: 64rem) {
+  :root {
+    --breadcrumb-top-margin: var(--spacing-alias-fixed-600);
+  }
+
+  .breadcrumb {
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb > li {
+    min-height: unset;
+    min-width: unset;
+  }
+
+  .breadcrumb > li:not(:first-child, :last-child) {
+    display: flex;
+  }
+
+  .breadcrumb > li > span,
+  .breadcrumb > li > a,
+  .breadcrumb > li + li::before {
+    padding: 0;
+  }
+}

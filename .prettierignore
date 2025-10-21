@@ -1,0 +1,5 @@
+node_modules/
+/scripts/*
+/scripts/martech/*.min.js
+!/scripts/**/
+tech_account_creds.json

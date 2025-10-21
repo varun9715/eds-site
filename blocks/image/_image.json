@@ -1,0 +1,107 @@
+{
+  "definitions": [
+    {
+      "title": "Image",
+      "id": "image",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Image",
+              "model": "image",
+              "aspectRatio": "smart-crop-16-9"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "image",
+      "fields": [
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "name": "image",
+          "label": "Image",
+          "required": true,
+          "placeholder": "placeholder",
+          "configUrl": "/content/dam/image.config.json",
+          "valueType": "string"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "imageMimeType"
+        },
+        {
+          "component": "boolean",
+          "name": "isAlternativeText",
+          "valueType": "boolean",
+          "label": "Don't provide an alternative text",
+          "description": "Leave alt text empty for images that add no meaning or value. Marking them as decorative ensures assistive technologies ignore them.",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
+          "name": "imageAlt",
+          "value": "",
+          "label": "Alternative text for accessibility",
+          "condition": {
+            "===": [
+              {
+                "var": "isAlternativeText"
+              },
+              false
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "description": "Applies to single image (not gallery).",
+          "name": "aspectRatio",
+          "value": "",
+          "label": "Aspect Ratio",
+          "required": true,
+          "options": [
+            { "name": "16:9", "value": "smart-crop-16-9" },
+            { "name": "3:2", "value": "smart-crop-3-2" },
+            { "name": "5:4", "value": "smart-crop-5-4" },
+            { "name": "1:1", "value": "smart-crop-1-1" },
+            { "name": "4:5", "value": "smart-crop-4-5" },
+            { "name": "Original", "value": "original" }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "description": "Write concise, clear captions that provide meaningful context for users. It should complement, not duplicate, the alt text.",
+          "name": "caption",
+          "value": "",
+          "label": "Caption"
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link",
+          "description": "Link, to a content page, external URL or page anchor"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkText",
+          "value": "",
+          "label": "Link Text",
+          "condition": {
+            "!!": { "var": "link" }
+          }
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

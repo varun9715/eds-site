@@ -1,0 +1,21 @@
+.app-download.block {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-alias-responsive-200-to-600);
+  flex-direction: column;
+
+  & a {
+    display: flex;
+  }
+
+  & a:focus-visible {
+    border-radius: var(--border-radius-alias-fixed-md);
+  }
+}
+
+@media (min-width: 36rem) {
+  .app-download.block {
+    flex-direction: row;
+    align-items: center;
+  }
+}

@@ -1,13 +1,16 @@
 version: 1
 
 indices:
-  pages:
+  site-en-au: &base-site
     include:
-      - '/**'
+      - '/en-au/**'
     exclude:
-      - '/**.json'
-    target: /query-index.json
+      - '/en-au/**.json'
+    target: /en-au/query-index.json
     properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")

@@ -7,3 +7,16 @@ helix-importer-ui
 .DS_Store
 *.bak
 .idea
+
+html
+
+*storybook.log
+.env
+tech_account_creds.json
+Cypress.env.json
+**/cypress/screenshots
+**/cypress/videos
+**/cypress/reports
+**/cypress/testDir
+**/cypress/testResults.json
+artifacts

@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`logo-and-text-container block > should match the rendered snapshot 1`] = `"<div class="logo-and-text-container layout-1-col logo-and-text"><div class="logo-and-text-item"><div class="logo-and-text-image"><img src="https://example.com/icon.png" alt="Image Alt Text"></div><div class="logo-and-text-content"><h2 class="logo-and-text-title">Enter your title here</h2><div class="logo-and-text-body body-01"><div><p>Enter your body text here</p></div></div><div class="logo-and-text-links body-01"><a href="https://qantas.com/au/en.html" class="logo-and-text-link standalone">Link</a><a href="https://qantas.com/au/about-us.html" class="logo-and-text-link standalone">Link</a></div></div></div></div>"`;

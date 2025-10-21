@@ -1,0 +1,169 @@
+{
+  "definitions": [
+    {
+      "title": "Logo and Text Container",
+      "id": "logo-and-text-container",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Logo and Text Container",
+              "model": "logo-and-text-container",
+              "filter": "logo-and-text-container",
+              "classes": "layout-1-col"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Logo and Text",
+      "id": "logo-and-text",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Logo and Text",
+              "model": "logo-and-text",
+              "item_headingType": "h3"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "logo-and-text-container",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "layout-1-col",
+          "label": "Layout",
+          "required": true,
+          "options": [
+            { "name": "1 Column", "value": "layout-1-col" },
+            { "name": "2 Columns", "value": "layout-2-col" },
+            { "name": "3 Columns", "value": "layout-3-col" },
+            { "name": "4 Columns", "value": "layout-4-col" },
+            { "name": "4 Columns Center", "value": "layout-4-col-center" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "logo-and-text",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Asset",
+          "name": "tab-asset"
+        },
+        {
+          "component": "custom-icon-picker",
+          "valueType": "string",
+          "name": "iconPicker",
+          "label": "Logo",
+          "placeholder": "placeholder",
+          "configUrl": "/content/dam/image.config.json",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "iconAltText",
+          "label": "Alternative text for accessibility",
+          "condition": {
+            "===": [
+              {
+                "var": "iconAltTextHide"
+              },
+              false
+            ]
+          },
+          "description": "Write descriptive, concise, relevant alt text to describe the image in context, enhancing accessibility for visually impaired users and improving SEO.",
+          "value": ""
+        },
+        {
+          "component": "boolean",
+          "label": "Don't provide an alternative text",
+          "name": "iconAltTextHide",
+          "description": "Leave alt text empty for images that add no meaning or value. Marking them as decorative ensures assistive technologies ignore them."
+        },
+        {
+          "component": "tab",
+          "label": "Text",
+          "name": "tab-text"
+        },
+        {
+          "component": "text",
+          "name": "item_heading",
+          "label": "Title",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "select",
+          "name": "item_headingType",
+          "value": "h3",
+          "label": "Heading Type",
+          "valueType": "string",
+          "options": [
+            { "name": "H2", "value": "h2" },
+            { "name": "H3", "value": "h3" },
+            { "name": "H4", "value": "h4" }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "item_description",
+          "label": "Description",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "tab",
+          "label": "Link",
+          "name": "tab-link"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "item_link1",
+          "label": "CTA 1 Link",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "item_link1Text",
+          "label": "CTA 1 Text",
+          "value": ""
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "item_link2",
+          "label": "CTA 2 Link",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "item_link2Text",
+          "label": "CTA 2 Text",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "logo-and-text-container",
+      "components": ["logo-and-text"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# TESTOWNERS - Maps test files to individual and team owners
+# Format: <relative-file-path> <owner1> <owner2> ...
+
+cypress/e2e/blocks/AnchorSection.cy.js preethi.ravanan@qantas.com.au
+cypress/e2e/blocks/Breadcrumb.cy.js ashima.nayak@qantas.com.au
+cypress/e2e/blocks/Footer.cy.js ashima.nayak@qantas.com.au
+cypress/e2e/blocks/GalleryBlock.cy.js axlerossgonzales@qantas.com.au
+cypress/e2e/blocks/Header.cy.js preethi.ravanan@qantas.com.au
+cypress/e2e/blocks/HeroBlock.cy.js axlerossgonzales@qantas.com.au prem.nepak@qantas.com.au
+cypress/e2e/blocks/IconAndText.cy.js axlerossgonzales@qantas.com.au
+cypress/e2e/blocks/ImageAndText.cy.js axlerossgonzales@qantas.com.au
+cypress/e2e/blocks/ImageText.cy.js axlerossgonzales@qantas.com.au
+cypress/e2e/blocks/InpageNavBlock.cy.js preethi.ravanan@qantas.com.au
+cypress/e2e/blocks/LinkListBlock.cy.js axlerossgonzales@qantas.com.au
+cypress/e2e/blocks/Navigation.cy.js axlerossgonzales@qantas.com.au
+cypress/e2e/blocks/TextBlock.cy.js axlerossgonzales@qantas.com.au
+cypress/e2e/blocks/TitleBlock.cy.js preethi.ravanan@qantas.com.au
+cypress/e2e/blocks/VideoPlayer.cy.js preethi.ravanan@qantas.com.au
+cypress/e2e/visualtests/visualTest.cy.js axlerossgonzales@qantas.com.au prem.nepak@qantas.com.au

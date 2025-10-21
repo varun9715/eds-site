@@ -1,0 +1,12 @@
+{
+    "fields": [
+        {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string",
+        "required": true
+        }
+    ]
+}
