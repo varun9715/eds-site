@@ -59,8 +59,8 @@ function getReporterConfig() {
       saveJson: true,
       embeddedScreenshots: true,
       inlineAssets: true,
-      reportTitle: `qcom-regression-${env}`,
-      reportPageTitle: `qcom-regression-${env}`,
+      reportTitle: `eds-site-regression-${env}`,
+      reportPageTitle: `eds-site-regression-${env}`,
     },
   };
 }

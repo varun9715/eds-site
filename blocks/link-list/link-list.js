@@ -53,7 +53,7 @@ const fetchChildPageData = async ({
 
     const PAGE_INFO_PATH = `${parentPath}.pageinfo.children.json`;
     const pageInfoApiURL = isAuthorMode()
-      ? `/content/qcom${PAGE_INFO_PATH}`
+      ? `/content/eds-site${PAGE_INFO_PATH}`
       : `${window.hlx.codeBasePath}${getContentService()}${PAGE_INFO_PATH}`;
 
     const allPagesData = await fetch(pageInfoApiURL);

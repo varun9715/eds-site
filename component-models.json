@@ -1671,7 +1671,7 @@
         "description": "Leave empty to use current page. Max depth 1 level",
         "valueType": "string",
         "validation": {
-          "rootPath": "/content/qcom"
+          "rootPath": "/content/eds-site"
         },
         "condition": {
           "===": [
@@ -1741,7 +1741,7 @@
         "valueType": "string[]",
         "multi": true,
         "validation": {
-          "rootPath": "/content/qcom"
+          "rootPath": "/content/eds-site"
         },
         "condition": {
           "===": [
@@ -2078,7 +2078,7 @@
         "label": "Region Selector URL",
         "valueType": "string",
         "validation": {
-          "rootPath": "/content/qcom"
+          "rootPath": "/content/eds-site"
         }
       }
     ]

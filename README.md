@@ -4,8 +4,8 @@ This repository contains the codebase for the Q.com rebuild using Adobe's Edge D
 
 ## Environments
 
-- Preview: https://main--dev-qcom-qantas-cloud.aem.page/
-- Live: https://main--dev-qcom-qantas-cloud.aem.live/
+- Preview: https://main--dev-eds-site-qantas-cloud.aem.page/
+- Live: https://main--dev-eds-site-qantas-cloud.aem.live/
 
 ## Getting Started
 
@@ -287,7 +287,7 @@ npx cypress open --env environmentName=dev --config-file cypress/cypress.config.
 
 If you are setting up a **new technical account** or if an **environment reset** has caused permissions to be revoked, ensure that the following permissions are assigned to the **technical account**:  
 
-- **`readwrite`** access to `/content/qcom`  
+- **`readwrite`** access to `/content/eds-site`  
 - **`read`** access to the root (`/`)  
 
 Failure to assign these permissions will prevent Cypress tests from communicating with the **Universal Editor**, resulting in an authentication error.  

@@ -115,7 +115,7 @@ const itemTemplate = {
           'Global Disclaimer - Internet Content - Fragment from australia variation',
       },
       _id: '4a6c85bc-c1bb-4066-83c1-9ef3e44b0c65',
-      _path: '/content/dam/qcom/content-fragments/en/disclaimers/internet',
+      _path: '/content/dam//content-fragments/en/disclaimers/internet',
       _tags: [],
       __typename: 'DisclaimerModel',
       _metadata: {
@@ -147,7 +147,7 @@ const itemTemplate = {
           'Global Disclaimer - Internet - Content Fragment from master variation',
       },
       _id: '4a6c85bc-c1bb-4066-83c1-9ef3e44b0c65',
-      _path: '/content/dam/qcom/content-fragments/en/disclaimers/internet',
+      _path: '/content/dam//content-fragments/en/disclaimers/internet',
       _tags: [],
       __typename: 'DisclaimerModel',
       _metadata: {
@@ -178,7 +178,7 @@ const itemTemplate = {
         plaintext: 'Global Disclaimer - Park - Content Fragment - AU EN',
       },
       _id: '4977793f-ba18-46a1-ae3d-dc3838b02769',
-      _path: '/content/dam/qcom/content-fragments/en/disclaimers/park',
+      _path: '/content/dam//content-fragments/en/disclaimers/park',
       _tags: [],
       __typename: 'DisclaimerModel',
       _metadata: {
@@ -209,7 +209,7 @@ const itemTemplate = {
         plaintext: 'Global Disclaimer - Park - Content Fragment - Master EN',
       },
       _id: '4977793f-ba18-46a1-ae3d-dc3838b02769',
-      _path: '/content/dam/qcom/content-fragments/en/disclaimers/park',
+      _path: '/content/dam/eds-site/content-fragments/en/disclaimers/park',
       _tags: [],
       __typename: 'DisclaimerModel',
       _metadata: {

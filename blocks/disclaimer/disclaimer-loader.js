@@ -290,7 +290,7 @@ const fetchGlobalDisclaimerItems = async (main) => {
 
   const pathFilters = [
     {
-      value: `/content/dam/qcom/content-fragments/${lang}`,
+      value: `/content/dam/eds-site/content-fragments/${lang}`,
       _operator: 'STARTS_WITH',
     },
   ];

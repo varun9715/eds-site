@@ -43,19 +43,19 @@ const Template = () => {
       <div>${listData[5]}</div>
     </div>
     <div>
-      <div><a href="/content/qcom">${data[0]}</a></div>
+      <div><a href="/content/eds-site">${data[0]}</a></div>
     </div>
     <div>
-      <div><a href="/content/qcom">${data[1]}</a></div>
+      <div><a href="/content/eds-site">${data[1]}</a></div>
     </div>
     <div>
-      <div><a href="/content/qcom">${data[2]}</a></div>
+      <div><a href="/content/eds-site">${data[2]}</a></div>
     </div>
     <div>
-      <div><a href="/content/qcom">${data[3]}</a></div>
+      <div><a href="/content/eds-site">${data[3]}</a></div>
     </div>
     <div>
-      <div><a href="/content/qcom">${data[4]}</a></div>
+      <div><a href="/content/eds-site">${data[4]}</a></div>
     </div>`;
 
   // Apply the decorate function

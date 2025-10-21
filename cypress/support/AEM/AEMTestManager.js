@@ -2,7 +2,7 @@ import AEMHTTPServices from './aemHttpServices.js';
 import EdsNavigator from '../navigation/edsNavigator.js';
 import UniversalEditorHTTPServices from './universalEditorHttpServices.js';
 
-const pageParentPath = '/content/qcom/en-au/cypress';
+const pageParentPath = '/content/eds-site/en-au/cypress';
 const pageTemplate = '/libs/core/franklin/templates/page';
 
 export default class AEMTestManager {

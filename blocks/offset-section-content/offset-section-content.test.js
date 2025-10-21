@@ -41,7 +41,7 @@ describe('Offset section content block', () => {
     const cta1 = createMockElement(
       'div',
       `<div><p>cta1</p></div>
-            <div><p><a href="/content/qcom/some-cool-link">CTA1</a></p></div>`,
+            <div><p><a href="/content/eds-site/some-cool-link">CTA1</a></p></div>`,
       'cta1',
     );
     const cta2 = createMockElement(
@@ -94,7 +94,7 @@ describe('Offset section content block', () => {
     const links = containerBlock.querySelectorAll('.standalone');
     expect(links).toBeDefined();
     expect(links.length).toBe(2);
-    expect(links[0].href.indexOf('/content/qcom/') > 0).toBeTruthy();
+    expect(links[0].href.indexOf('/content/eds-site/') > 0).toBeTruthy();
     expect(links[1].href).toBe('https://qantas.com/au/en.html');
   });
 });

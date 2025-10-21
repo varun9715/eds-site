@@ -130,7 +130,7 @@ describe('CTA Link Block', () => {
   it('should handle relative link correctly in author mode', () => {
     block.innerHTML = `
       <div>first-cta-primary</div>
-      <div><a href="/content/qcom/en-au/about-us">Primary Link</a></div>
+      <div><a href="/content/eds-site/en-au/about-us">Primary Link</a></div>
       <div>Primary link description</div>
       <div>utm_source</div>
       <div>storybook</div>
@@ -147,7 +147,7 @@ describe('CTA Link Block', () => {
     const link = block.querySelector('a.button.primary');
     expect(link).not.toBeNull();
     expect(link.getAttribute('href')).toBe(
-      '/content/qcom/en-au/about-us?utm_source=storybook',
+      '/content/eds-site/en-au/about-us?utm_source=storybook',
     );
     expect(link.innerText).toBe('Primary Link');
     expect(link.getAttribute('aria-label')).toBe('Primary link description');

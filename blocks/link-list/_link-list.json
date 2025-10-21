@@ -96,7 +96,7 @@
           "description": "Leave empty to use current page. Max depth 1 level",
           "valueType": "string",
           "validation": {
-            "rootPath": "/content/qcom"
+            "rootPath": "/content/eds-site"
           },
           "condition": { "===": [{ "var": "buildListUsingType" }, "childPages"] }
         },
@@ -145,7 +145,7 @@
           "valueType": "string[]",
           "multi": true,
           "validation": {
-            "rootPath": "/content/qcom"
+            "rootPath": "/content/eds-site"
           },
           "condition": { "===": [{ "var": "buildListUsingType" }, "childPages"] }
         },

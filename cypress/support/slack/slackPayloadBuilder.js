@@ -57,7 +57,7 @@ class SlackPayloadBuilder {
   };
 
   // eslint-disable-next-line class-methods-use-this
-  extractQcomReportUrl = async () => {
+  extracteds-siteReportUrl = async () => {
     const fallbackUrl = 'https://github.com';
     const githubPagesUrl = process.env.GITHUB_PAGES_URL;
     if (githubPagesUrl) {
@@ -137,7 +137,7 @@ class SlackPayloadBuilder {
   });
 
   #generateActionButtons = async () => {
-    const reportUrl = await this.extractQcomReportUrl();
+    const reportUrl = await this.extracteds-siteReportUrl();
     let buttonStyle;
 
     if (this.runResult === RUN_STATUSES.PASSED) {
@@ -192,7 +192,7 @@ class SlackPayloadBuilder {
   #generateMainHeaderSection = async () => {
     let headerText = '';
     let emojiPrefix = '';
-    const reportUrl = await this.extractQcomReportUrl();
+    const reportUrl = await this.extracteds-siteReportUrl();
 
     if (this.runResult === RUN_STATUSES.PASSED) {
       headerText = '  E2E Test Run PASSED!  ';

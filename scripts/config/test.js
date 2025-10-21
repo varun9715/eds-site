@@ -90,7 +90,7 @@ export const config = {
     },
     shopping_cart: {
       scriptPath:
-        'https://static.qcom-stg.qantastesting.com/ams02/a974/62/dev/eds-master/shoppingcart_widget/current/app.js',
+        'https://static.eds-site-stg.qantastesting.com/ams02/a974/62/dev/eds-master/shoppingcart_widget/current/app.js',
     },
   },
 };

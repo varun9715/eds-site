@@ -11,7 +11,7 @@ import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain, decorateAnchorSections } from './scripts.js';
 
 // set aem content root
-window.hlx.aemRoot = '/content/qcom';
+window.hlx.aemRoot = '/content/eds-site';
 window.hlx.runmode = 'author';
 
 async function applyChanges(event) {

@@ -14,7 +14,7 @@ export const allBlocksSetup = [
       {
         op: 'replace',
         path: '/image',
-        value: '/content/dam/qcom/peak-performance.png',
+        value: '/content/dam/eds-site/peak-performance.png',
       },
       { op: 'replace', path: '/imageAlt', value: 'Dummy Alt Text For Hero Banner Image' },
       { op: 'replace', path: '/text', value: 'Dummy Text For Hero Banner Image' },
@@ -22,7 +22,7 @@ export const allBlocksSetup = [
       {
         op: 'replace',
         path: '/imagePicker',
-        value: '/content/dam/qcom/peak-performance.png',
+        value: '/content/dam/eds-site/peak-performance.png',
       },
       { op: 'replace', path: '/imagePickerTitle', value: 'Image Picker Title -' },
       { op: 'replace', path: '/imageCaption', value: 'Image Caption' },
@@ -43,7 +43,7 @@ export const allBlocksSetup = [
       xwalk: CardsJson.definitions[1].plugins.xwalk,
     },
     childBlockPatchConfigurationBody: [
-      { op: 'replace', path: '/image', value: '/content/dam/qcom/hero.png' },
+      { op: 'replace', path: '/image', value: '/content/dam/eds-site/hero.png' },
       { op: 'replace', path: '/text', value: 'Dummy Text For Card Image' },
     ],
   },

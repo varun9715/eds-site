@@ -10,7 +10,7 @@ vi.mock('../../scripts/scripts.js', () => ({
     // Otherwise, prepend domain
     return `https://www.qantas.com${path}`;
   }),
-  isEDSLink: vi.fn(async (path) => path.includes('/content/qcom')),
+  isEDSLink: vi.fn(async (path) => path.includes('/content/eds-site')),
 }));
 
 describe('Image and Text Block', () => {

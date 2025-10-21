@@ -6,5 +6,5 @@ exports[`Offset section content block > should match the rendered snapshot 1`] =
               <li>Enter your bullet points here</li>
               <li>Enter your bullet points here</li>
               <li>Enter your bullet points here</li>
-            </ul></div><div class="cta-links-container"><a href="/content/qcom/some-cool-link" class="standalone" data-wae-event="link_click" data-wae-block-type="offset_section_content">CTA1</a><a href="https://qantas.com/au/en.html" class="standalone" data-wae-event="link_click" data-wae-block-type="offset_section_content">CTA2</a></div>"
+            </ul></div><div class="cta-links-container"><a href="/content/eds-site/some-cool-link" class="standalone" data-wae-event="link_click" data-wae-block-type="offset_section_content">CTA1</a><a href="https://qantas.com/au/en.html" class="standalone" data-wae-event="link_click" data-wae-block-type="offset_section_content">CTA2</a></div>"
 `;

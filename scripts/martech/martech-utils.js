@@ -26,7 +26,7 @@ export async function getECID(cookieNameToSet) {
 /**
  * Helper function that converts an AEM path into an EDS path.
  */
-const CONTENT_ROOT_PATH = '/content/qcom';
+const CONTENT_ROOT_PATH = '/content/eds-site';
 export function getEDSLink(aemPath) {
   let aemRoot = CONTENT_ROOT_PATH;
 
@@ -39,7 +39,7 @@ export function getEDSLink(aemPath) {
 
 /**
  * Process current pathname and return details for use in language switching
- * Considers pathnames like /en/path/to/content and /content/qcom/global/en/path/to/content.html
+ * Considers pathnames like /en/path/to/content and /content/eds-site/global/en/path/to/content.html
  * for both EDS and AEM
  */
 export function getPathDetails() {
@@ -50,7 +50,7 @@ export function getPathDetails() {
   const parts = pathname.split('/');
   const safeLangGet = (index) => (parts.length > index ? parts[index] : 'en');
   // 4 is the index of the language in the path for AEM content paths like
-  // /content/qcom/global/en/path/to/content.html
+  // /content/eds-site/global/en/path/to/content.html
   // 1 is the index of the language in the path for EDS paths like /en/path/to/content
   let lang = isContentPath ? safeLangGet(3) : safeLangGet(1);
   // remove suffix from lang if any

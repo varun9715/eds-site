@@ -12,7 +12,7 @@ describe.skip(
     const timestamp = Date.now();
     const pageLabel = `test-label-${timestamp}`;
     const pageTitle = `cypress-${timestamp}`;
-    const pageParentPath = '/content/qcom/en-au/cypress';
+    const pageParentPath = '/content/eds-site/en-au/cypress';
     const pageTemplate = '/libs/core/franklin/templates/page';
     let accessToken;
 

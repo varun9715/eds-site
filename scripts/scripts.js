@@ -32,7 +32,7 @@ export const ENVIRONMENT = {
   UAT: 'uat',
 };
 
-const CONTENT_ROOT_PATH = '/content/qcom';
+const CONTENT_ROOT_PATH = '/content/eds-site';
 
 export async function decorateAnchorSections(main) {
   if (
@@ -95,7 +95,7 @@ export function getLink(edsPath) {
 
 /**
  * Process current pathname and return details for use in language switching
- * Considers pathnames like /en-au/page and /content/qcom/en-au/page.html
+ * Considers pathnames like /en-au/page and /content/eds-site/en-au/page.html
  * for both EDS and AEM
  */
 export function getPathDetails() {

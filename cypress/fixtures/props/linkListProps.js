@@ -25,10 +25,10 @@ const fixedLinkProp = [
     linkText: 'Google',
   },
   { link: 'https://www.qantas.com', linkText: 'Qantas Site' },
-  { link: '/content/qcom', linkText: 'Internal Site 1' },
-  { link: '/content/qcom', linkText: 'Internal Site 2' },
-  { link: '/content/qcom', linkText: 'Internal Site 3' },
-  { link: '/content/qcom', linkText: 'Internal Site 4' },
+  { link: '/content/eds-site', linkText: 'Internal Site 1' },
+  { link: '/content/eds-site', linkText: 'Internal Site 2' },
+  { link: '/content/eds-site', linkText: 'Internal Site 3' },
+  { link: '/content/eds-site', linkText: 'Internal Site 4' },
   // You can add up to 4
 ];
 
@@ -38,9 +38,9 @@ const fixedLinkPropLessThan5 = [
     linkText: 'Google',
   },
   { link: 'https://www.qantas.com', linkText: 'Qantas Site' },
-  { link: '/content/qcom', linkText: 'Internal Site 1' },
-  { link: '/content/qcom', linkText: 'Internal Site 2' },
-  { link: '/content/qcom', linkText: 'Internal Site 3' },
+  { link: '/content/eds-site', linkText: 'Internal Site 1' },
+  { link: '/content/eds-site', linkText: 'Internal Site 2' },
+  { link: '/content/eds-site', linkText: 'Internal Site 3' },
   // You can add up to 4
 ];
 

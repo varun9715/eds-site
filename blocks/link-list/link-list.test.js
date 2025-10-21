@@ -154,17 +154,17 @@ describe('link-list component', () => {
 
     // Sample data representing child pages
     depthOneLinks = [
-      { pagePath: '/content/qcom/page1', 'jcr:title': 'Page 1', hideinnavigation: false },
-      { pagePath: '/content/qcom/page2', 'jcr:title': 'Page 2', hideinnavigation: true },
-      { pagePath: '/content/qcom/page3', 'jcr:title': 'Page 3' }, // no hideinnavigation property
-      { pagePath: '/content/qcom/page4', 'jcr:title': 'Page 4', hideinnavigation: false },
+      { pagePath: '/content/eds-site/page1', 'jcr:title': 'Page 1', hideinnavigation: false },
+      { pagePath: '/content/eds-site/page2', 'jcr:title': 'Page 2', hideinnavigation: true },
+      { pagePath: '/content/eds-site/page3', 'jcr:title': 'Page 3' }, // no hideinnavigation property
+      { pagePath: '/content/eds-site/page4', 'jcr:title': 'Page 4', hideinnavigation: false },
       {
-        pagePath: '/content/qcom/excluded-page',
+        pagePath: '/content/eds-site/excluded-page',
         'jcr:title': 'Excluded Page',
         hideinnavigation: false,
       },
       {
-        pagePath: '/content/qcom/another-excluded',
+        pagePath: '/content/eds-site/another-excluded',
         'jcr:title': 'Another Excluded',
         hideinnavigation: false,
       },
@@ -228,7 +228,7 @@ describe('link-list component', () => {
 
   describe('filtering with excludeUrl parameter', () => {
     it('should filter out pages that match excludeUrl paths', () => {
-      removeLinks = ['/content/qcom/excluded-page', '/content/qcom/another-excluded'];
+      removeLinks = ['/content//excluded-page', '/content/eds-site/another-excluded'];
 
       const filteredLinks = depthOneLinks.filter(
         (item) =>
@@ -238,9 +238,9 @@ describe('link-list component', () => {
 
       expect(filteredLinks).toHaveLength(3);
       expect(filteredLinks.map((item) => item.pagePath)).toEqual([
-        '/content/qcom/page1',
-        '/content/qcom/page3',
-        '/content/qcom/page4',
+        '/content/eds-site/page1',
+        '/content/eds-site/page3',
+        '/content/eds-site/page4',
       ]);
     });
 
@@ -255,11 +255,11 @@ describe('link-list component', () => {
 
       expect(filteredLinks).toHaveLength(5);
       expect(filteredLinks.map((item) => item.pagePath)).toEqual([
-        '/content/qcom/page1',
-        '/content/qcom/page3',
-        '/content/qcom/page4',
-        '/content/qcom/excluded-page',
-        '/content/qcom/another-excluded',
+        '/content/eds-site/page1',
+        '/content/eds-site/page3',
+        '/content/eds-site/page4',
+        '/content/eds-site/excluded-page',
+        '/content/eds-site/another-excluded',
       ]);
     });
 
@@ -274,11 +274,11 @@ describe('link-list component', () => {
 
       expect(filteredLinks).toHaveLength(5);
       expect(filteredLinks.map((item) => item.pagePath)).toEqual([
-        '/content/qcom/page1',
-        '/content/qcom/page3',
-        '/content/qcom/page4',
-        '/content/qcom/excluded-page',
-        '/content/qcom/another-excluded',
+        '/content/eds-site/page1',
+        '/content/eds-site/page3',
+        '/content/eds-site/page4',
+        '/content/eds-site/excluded-page',
+        '/content/eds-site/another-excluded',
       ]);
     });
   });
@@ -297,24 +297,24 @@ describe('link-list component', () => {
 
       // Should exclude page2 because hideinnavigation is true
       const excludedPage = filteredLinks.find(
-        (item) => item.pagePath === '/content/qcom/page2',
+        (item) => item.pagePath === '/content/eds-site/page2',
       );
       expect(excludedPage).toBeUndefined();
 
       // Should include pages where hideinnavigation is false or undefined
       expect(filteredLinks.map((item) => item.pagePath)).toEqual([
-        '/content/qcom/page1',
-        '/content/qcom/page3',
-        '/content/qcom/page4',
-        '/content/qcom/excluded-page',
-        '/content/qcom/another-excluded',
+        '/content/eds-site/page1',
+        '/content/eds-site/page3',
+        '/content/eds-site/page4',
+        '/content/eds-site/excluded-page',
+        '/content/eds-site/another-excluded',
       ]);
     });
 
     it('should handle pages without hideinnavigation property', () => {
       const pagesWithoutProperty = [
-        { pagePath: '/content/qcom/page1', 'jcr:title': 'Page 1' },
-        { pagePath: '/content/qcom/page2', 'jcr:title': 'Page 2' },
+        { pagePath: '/content/eds-site/page1', 'jcr:title': 'Page 1' },
+        { pagePath: '/content/eds-site/page2', 'jcr:title': 'Page 2' },
       ];
       removeLinks = [];
 

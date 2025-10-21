@@ -55,7 +55,7 @@ const buildGraphQLFilter = ({ filters = {}, _logOp = 'OR' } = {}) => {
  */
 const fetchFromGraphQLPersistedQuery = async ({
   endpointUrl = `${getContentService()}/graphql/execute.json`,
-  endpointName = 'qcom',
+  endpointName = 'eds-site',
   operationName,
   stringFilters = {},
 } = {}) => {
