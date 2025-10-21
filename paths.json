@@ -1,7 +1,7 @@
 {
   "mappings": [
     "/content/eds-site/:/",
-    "/content/eds-site/configuration:/.helix/config.json",
+    "/content/eds-site/configuration:/config.json",
     "/content/eds-site/metadata:/metadata.json",
     "/content/eds-site/en-au/placeholders:/en-au/placeholders.json",
     "/content/eds-site.resource/en-au/query-index.json:/en-au/query-index.json"
