@@ -4,9 +4,7 @@
     "/content/eds-site/configuration:/.helix/config.json",
     "/content/eds-site/metadata:/metadata.json",
     "/content/eds-site/en-au/placeholders:/en-au/placeholders.json",
-    "/content/eds-site.resource/en-au/query-index.json:/en-au/query-index.json",
-    "/content/eds-site.resource/component-models.json:/component-models.json",
-    "/content/eds-site:/config.json"
+    "/content/eds-site.resource/en-au/query-index.json:/en-au/query-index.json"
   ],
   "includes": ["/content/eds-site/"]
 }
