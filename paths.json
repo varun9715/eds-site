@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/qcom/:/",
-    "/content/qcom/configuration:/.helix/config.json",
-    "/content/qcom/metadata:/metadata.json",
-    "/content/qcom/en-au/placeholders:/en-au/placeholders.json",
-    "/content/qcom.resource/en-au/query-index.json:/en-au/query-index.json"
+    "/content/eds-site/:/",
+    "/content/eds-site/configuration:/.helix/config.json",
+    "/content/eds-site/metadata:/metadata.json",
+    "/content/eds-site/en-au/placeholders:/en-au/placeholders.json",
+    "/content/eds-site.resource/en-au/query-index.json:/en-au/query-index.json"
   ],
-  "includes": ["/content/qcom/"]
+  "includes": ["/content/eds-site/"]
 }
